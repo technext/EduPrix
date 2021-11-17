@@ -1,0 +1,65 @@
+append variables
+  -
+    var courses= [
+      {
+        image:'art-masterclass.png',
+        logo:'moma.png',
+        title :'The Professional Art Masterclass',
+        text: 'The Museum of Modern Art',
+      },
+      {
+        image:'premiere.png',
+        logo:'moma.png',
+        title :'Premiere Pro CC for Beginners',
+        text: 'The Museum of Modern Art',
+      },
+      {
+        image:'electricity.png',
+        logo:'y.png',
+        title :'Electricity & Magnetism',
+        text: 'Duke University',
+      },
+      {
+        image:'chemistry.png',
+        logo:'school.png',
+        title :'School chemistry beta',
+        text: 'Duke University',
+      },
+      {
+        image:'oriental-art.png',
+        logo:'moma.png',
+        title :'Modernism in Oriental Art',
+        text: 'The Museum of Modern Art',
+      },
+      {
+        image:'visual-art.png',
+        logo:'cal-arts.png',
+        title :'Compositions in Visual Art',
+        text: 'The Museum of Modern Art',
+      },
+      {
+        image:'physics.png',
+        logo:'school-physics.png',
+        title :'High school physics',
+        text: 'The Museum of Modern Art',
+      },
+      {
+        image:'davinci.png',
+        logo:'moma.png',
+        title :'Color Grading with Da Vinci',
+        text: 'Duke University',
+      },
+    ];
+        
+mixin TopCourse 
+  +Section 
+    .row 
+      h1.header-title.display-4.header.text-start.mb-5  TOP COURSES
+      +Courses(courses[0])
+      +Courses(courses[1])
+      +Courses(courses[2])
+      +Courses(courses[3])
+      +Courses(courses[4])
+      +Courses(courses[5])
+      +Courses(courses[6])
+      +Courses(courses[7])

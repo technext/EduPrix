@@ -1,0 +1,125 @@
+append variables  
+  -
+    var plugins = [
+      {
+        title: 'Anchor.js',
+        description: `A JavaScript utility for adding deep anchor links to existing page content. AnchorJS is lightweight, accessible, and has no dependencies.`,
+        documentationUrl: 'https://www.bryanbraun.com/anchorjs/#basic-usage'
+      },
+      {
+        title: 'CountUp',
+        description: `CountUp.js is a dependency-free, lightweight JavaScript class that can be used to quickly create animations that display numerical data in a more interesting way.`,
+        implementationUrl: `${CWD}nav-eight-item-four-column.html#fun-facts`,
+        documentationUrl: 'https://github.com/inorganik/CountUp.js'
+      },
+      {
+        title: 'FontAwesome 5',
+        description: 'Get vector icons and social logos on your website with Font Awesome, the web\'s most popular icon set and toolkit.',
+        documentationUrl: 'https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use'
+      },
+    
+      {
+        title: 'Is.js',
+        description: 'Micro check plugin. Check types, regexps, presence, time and more...',
+        documentationUrl: 'http://is.js.org/'
+      },
+      {
+        title: 'Lodash',
+        description: 'A modern JavaScript utility library delivering modularity, performance, & extras.',
+        documentationUrl: 'https://lodash.com/'
+      },
+
+      {
+        title: 'Swiper',
+        description: 'Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.',
+        implementationUrl: `${CWD}nav-four-item-one-column.html#swiper`,
+        documentationUrl: 'https://swiperjs.com'
+      },
+      {
+        title: 'Isotope',
+        description: `Filter & sort magical layouts.`,
+        implementationUrl: `${CWD}nav-four-item-two-column.html#portfolio`,
+        documentationUrl: 'https://isotope.metafizzy.co/'
+      },
+      {
+        title: 'BigPicture',
+        description: `BigPicture is a pure javascript lightbox. It can display images, iframes, inline content and videos with optional autoplay for YouTube, Vimeo and even self hosted videos.`,
+        implementationUrl: `${CWD}nav-four-item-two-column.html#bigpicture`,
+        documentationUrl: 'https://github.com/henrygd/bigpicture'
+      },
+      {
+        title: 'Rellax',
+        description: `Rellax is a buttery smooth, super lightweight (1021bytes gzipped), vanilla javascript parallax library.`,
+        documentationUrl: 'https://dixonandmoe.com/rellax/'
+      },
+   
+      {
+        title: 'Imagesloaded',
+        description:`Detect when images have been loaded.`,
+        documentationUrl: 'https://github.com/desandro/imagesloaded'
+      },
+     
+    ].sort((a,b) => a.title > b.title ? 1 : a.title < b.title ? -1 : 0)
+
+mixin Plugin(config)
+  h4.pt-5(data-anchor)=config.title 
+  p!=config.description
+    br
+    if(config.implementationUrl)
+      a(href=config.implementationUrl) Implementation in theme 
+      |  -  
+    if(config.documentationUrl) 
+      a(href=config.documentationUrl target='_blank') Full Documentation
+
+mixin Builtinplugins
+  h3.pt-5(data-anchor) Built-in plugins
+  .mt-1
+    each plugin in plugins
+      +Plugin(plugin)
+
+
+mixin NewPlugins
+  h3.pt-5(data-anchor) Add a New Plugin
+  p&attributes(attributes) Place your new plugin in 
+    code public/vendors
+    |  folder. Eg: to add the 
+    code typed.js
+    |  plugin, we will download it from 
+    a(href="https://mattboldt.com/demos/typed-js/" target="_blank") here,
+    |  unzip it and place the 
+    code typed
+    |  folder in 
+    code public/vendors
+    |  folder. You can now simply link the plugin files to your HTML and use them.
+
+  p Suppose we are installing the  
+    code typed.js
+    |  plugin. Here are the steps:
+  p.fw-bold.mb-0 Step 1:
+  p run npm command for install plugin. for 
+    code typed.js 
+    | we can run 
+  Pre 
+    code.lang-js.
+      npm i typed.js
+  p.fw-bold.mb-0.mt-3 Step 2:
+  p Go to 
+    code vendors.json 
+    | file and give the path directory from node_modules as follow
+  pre
+    code.language-js.
+      #{'"typed.js": {\n\t"src": ["lib/typed.js"],\n\t"dest": "typed.js"\n}'}
+  p Here, 
+    code dest
+    |  refers to 
+    code public/vendors/
+    | , where gulp will copy files from the 
+    code typed.js
+    |  plugin. We actually use the 
+    code vendors
+    |  folder to store neccassary plugins. And all the plugins folder name will be as we give the dest value
+  p.fw-bold.mb-0.mt-3 Step 3:
+  p Run the following command:
+  pre
+    code.lang-js.
+      #{'gulp vendor:move'}

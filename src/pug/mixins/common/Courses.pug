@@ -1,0 +1,12 @@
+mixin Courses(config)
+  .col-md-3.mb-4
+    .card.h-100
+      .position-relative
+        img.w-100(src=`${CWD}assets/img/gallery/${config.image}` alt='courses')
+        .course-logo 
+          img(src=`${CWD}assets/img/gallery/${config.logo}` alt='logo')
+          
+        span.badge.bg-primary Free
+      .card-body.px-0
+        h5.mb-0.font-sans-serif.fw-bold.fs-md-0.fs-lg-1!=config.title
+        a.text-muted.fs--1.stretched-link.text-decoration-none(href='#!')!=config.text

@@ -1,0 +1,28 @@
+.showcase{
+    margin-top: -12.5rem;
+}
+
+@include media-breakpoint-up(sm) {
+    .showcase {
+        margin-top: -14.8rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .showcase {
+        margin-top: -7.5rem;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .showcase {
+        margin-top: -6.6rem;
+    }
+}
+
+
+.ie{
+    .showcase-footer{
+        padding-top: map-get( $spacers, 8) !important;
+    }
+}

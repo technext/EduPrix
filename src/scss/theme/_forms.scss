@@ -1,0 +1,62 @@
+/*-----------------------------------------------
+|   Form
+-----------------------------------------------*/
+.input-group{
+  position: relative;
+  .input-box{
+    padding-left: 2.2rem;
+    vertical-align: middle;
+  }
+  .input-box-icon{
+    position: absolute;
+    top:50%;
+    // left: 19.9rem;
+    transform: translateY(-50%);
+  }
+}
+
+.form-eduprix-control{
+  padding: .375rem .95rem;
+}
+
+// label{
+//   font-size: map_get($font-sizes, '-1');
+//   font-weight: $font-weight-bold;
+//   letter-spacing: 0.02em;
+// }
+// // input.form-control{
+// //   border-image-source: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 0, 51, 0.5));
+// //   border-width: 2pt;
+// //   border-image-slice: 1;
+// // }
+
+
+// .form-boots-control {
+//   border: $input-border-width solid rgba($light, .9);
+//   border-radius: 0.563rem;
+//   font-weight: 300;
+//   background-color: $gray-100;
+//   padding: .5rem .5rem;
+//   &:active,
+//   &:focus {
+//     color: $black;
+//     font-weight: 700;
+//     background-color: $gray-100;
+//     border: 1px solid #FF7A00 !important;
+//     box-shadow: rgba($light, .9);
+//     outline: 0;
+//   }
+// }
+// textarea.form-control{
+//   border: none;
+//   &:active,
+//   &:focus {
+//     color: $black;
+//     font-weight: 700;
+//     background-color: $gray-100;
+//     box-shadow: none !important;
+//     outline: 0;
+//   }
+// }
+
+// /

@@ -1,0 +1,394 @@
+
+mixin DocumentationNav 
+  ul.pt-5.pt-lg-6.list-unstyled.sticky-top#docs-nav
+    li
+      a.text-gradient-cyan(href="#quick-start") Quick Start
+    li
+      a.text-gradient-cyan(href="#setting-build-system") Setting Up Build System
+    li
+      a.text-gradient-cyan(href="#file-structure") File Structure
+    li
+      a.text-gradient-cyan(href="#gulp") Gulp
+    li  
+      a.text-gradient-cyan(href="#rtl") RTL
+    li
+      a.text-gradient-cyan(href="#add-a-new-page") Add a New Page
+    li
+      a.text-gradient-cyan(href="#add-a-new-plugin") Add a New Plugin
+    li
+      a.text-gradient-cyan(href="#smtpjs") Smtpjs
+    li
+      a.text-gradient-cyan(href="#built-in-plugins") Built In Plugins
+    li
+      a.text-gradient-cyan(href="#google-map") Google Map
+    li
+      a.text-gradient-cyan(href="#changelog") Changelog
+
+mixin GettingStarted 
+  h3.pt-5.mt-n5(data-anchor) Quick start
+  p Looking to start your project quickly? Just unzip the 
+    code #{version}.zip
+    | . We have precompiled and packaged everything in the 
+    code public
+    |  directory for you. Start editing the 
+    code pages/starter.html
+    |  with a text or code editor, save it, and open the file in your favourite browser to see the changes.
+
+
+  h3.pt-5(data-anchor) Setting up Build system
+  p Unzip the 
+    code #{version}.zip
+    |  to any folder and open a command line or terminal at that location.
+    | Sparrow's dev tools require 
+    a(href='https://nodejs.org/en/' target='_blank') Node
+    |  and 
+    a(href='https://git-scm.com/' target='_blank') Git
+    |  . If you do not have them in your machine, please install their latest stable version from their corresponding website. As you have 
+    span.fw-black.text-black Node and Git installed and accessible from your terminal or command line
+    | , install 
+    a(href="https://gulpjs.com/" target='_blank') Gulp CLI
+    |  package 
+    |  globally with the following command:
+  pre
+    code.lang-html.
+      npm i gulp-cli -g
+
+  p.mt-4 When you’re done, install the rest of the sparrow’s dependencies with:
+  pre
+    code.lang-html.
+      npm i
+
+  p.mt-4 Now run:
+  pre
+    code.lang-html.
+      gulp
+
+  p.mt-4 Running gulp will compile the SCSS, transpile the javascript, copy all required libraries form 
+    code node_modules
+    |  to the corresponding 
+    code public/assets/vendors 
+    |  directory and will open a browser window to 
+    code public/index.html
+  p All of the following folders are monitored for changes, which will tell the browser to reload automatically after any changes are made:
+  +ComponentCardLib
+    | public/assets/video/
+    | public/assets/img/
+    | public/vendors
+    | src/pug/
+    | src/scss/ 
+    | src/js/
+
+
+  p.mt-4 Now you can edit any 
+    code pug
+    |  file from 
+    code src/pug
+    | , change SCSS variable with 
+    code scss/_user-variables.scss
+    | , or write your own SCSS code in 
+    code scss/_user.scss
+    |  and add or update 
+    code javaScript
+    |  from 
+    code src/js
+    |  directory.
+
+  .alert.alert-warning Running the 
+    code gulp
+    |  command will discard and regenerate all the files in following directories:
+  +ComponentCardLib
+    |  public/**/*.html
+    |  public/assets/css/
+    |  public/assets/js/
+    |  public/vendors
+
+  p.mt-4 Hit 
+    code Ctrl+C
+    |  or just close the command line window to stop the server.
+
+  p Happy editing!
+
+
+mixin Gulp 
+  h3(data-anchor).pt-5.pt-lg-6 Gulp
+  h5(data-anchor).py-2 To start your project run:
+  code.fs-2.border.rounded-1.py-2.px-3.d-block.border-300.bg-white gulp
+  p.mt-4 The 
+    code gulp
+    |  command will build, serve and watch the project with the following gulp tasks:
+
+  .table-responsive-md.table-responsive-xl
+    table.table.table-bordered
+      thead.bg-300.text-center.font-sans-serif
+        tr
+          th.text-nowrap Task
+          th Action
+      tbody
+        tr
+          td.text-nowrap
+            code clean
+          td Delete the following directories:
+            pre
+              code.lang-html.
+                public/assets/css
+                public/assets/js
+                public/vendors // packages which are included in vendors.json
+                public/**/*.html
+
+        tr
+          td.text-nowrap
+            code style
+          td Compiles 
+            code scss/theme.scss
+            |  and generates 
+            code theme.css, theme.min.css, theme-rlt.css, theme-rtl.min.css
+            |  and 
+            code theme.css.map, theme.min.css.map, theme-rlt.css.map, theme-rtl.min.css.map
+            |  to the 
+            code public/assets/css/ 
+            |  directory.
+        tr
+          td.text-nowrap
+            code script
+          td Concat the 
+            code js
+            |  files from 
+            code src/js/
+            |  and transpiles with babel to 
+            code theme.js
+            | , 
+            code theme.min.js
+            |  to the 
+            code public/assets/js/
+            |  directory.
+        tr
+          td.text-nowrap
+            code compile:all
+          td Compiles all the 
+            code js, 
+            code scss, 
+            code pug 
+            | files from the 
+            code src
+            |  directory.
+        tr
+          td.text-nowrap
+            code vendor
+          td Runs 
+            code vendor:clean
+            |  and 
+            code vendor:move
+            |  in series.
+        tr
+          td.text-nowrap
+            code vendor:clean
+          td Delete the vendors from 
+            code public/vendors
+            |  directory which are included in  
+            code vendors.json
+            | .
+
+        tr
+          td.text-nowrap
+            code vendor:move
+          td Copies the vendors from 
+            code node_modules/
+            |  directory to 
+            code public/vendors
+            |  directory according to the 
+            code vendors.json
+            | .
+
+        tr
+          td.text-nowrap
+            code watch
+          td All of the following folders are monitored for changes, which will tell the browser to reload automatically after any changes are made:
+            pre
+              code.lang-html.
+                public/assets/img
+                public/assets/video
+                public/vendors/
+                src/pug 
+                src/scss
+                src/js
+        tr
+          td.text-nowrap
+            code build
+          td Will delete previous build directory and generate a new compressed version to deploy 
+            pre
+              code.lang-html.
+                build/assets/img
+                build/assets/video
+                build/assets/css
+                build/assets/js
+                build/vendors/
+                build/**/*.html
+
+        tr
+          td.text-nowrap
+            code build:test
+          td Will run the build version in port:3000
+
+
+mixin Newpage
+  h3.pt-5(data-anchor) Add a New Page
+  p.mt-4 To add/replace a new page in 
+    code #{theme} #{currentVersion} 
+    | you should set a unique id to 
+    code .page 
+    | element and also assign it to 
+    code pages
+    |  attribute of 
+    code .sidebar-item-wrapper 
+    | for navigating this page from sidebar nav. For example, if we want to add 
+    strong feature 
+    | page in 
+    code nav-four-item-two-column.html 
+    | the following code need to set inside 
+    code #gridNav 
+
+
+mixin MapColorSchemesDemo 
+  h5.mt-5 Map color schemes
+  p Change the value of 
+    code data-theme=''
+    |  to any of the followings
+
+  ul
+    li
+      code Default
+    li
+      code Gray
+    li
+      code Midnight
+    li
+      code Hopper
+    li
+      code Beard
+    li
+      code AssassianCreed
+    li
+      code SubtleGray
+    li
+      code Tripitty 
+
+mixin  Smtpjs
+  h3.pt-5(data-anchor) Smtpjs
+  p.mt-5
+    | Using 
+    code Smtpjs 
+    | you will be able to directly send email using client-side javascript without any server-level configurations.
+    
+  a(href='https://smtpjs.com/' target='_blank') Full Documentation     
+  p.mt-3 You can also specify where to send the data via an hidden input:
+  p.fw-bold.font-sans-serif.mb-0 How to configure and use Gmail SMTP to send emails from Javascript?
+  p In case you are planning to use Gmail's SMTP to send mails, then make sure you have properly configured the below settings:
+  p.fw-bold.font-sans-serif.mb-0 Allowed access in Gmail for less secure apps: 
+  p To use Gmail SMTP you'll need to allow access for less secure apps from google account settings. Turning the below 
+    a(href='https://myaccount.google.com/lesssecureapps', target='_blank') settings
+    |&nbsp;off will allow your Javascript to connect to Gmail.
+
+  p.fw-bold.font-sans-serif.mb-0 Disabled 2-step factor authentication
+  p As you're going to connect to Gmail remotely using a program, so 2-step factor authentication should be disabled. Click 
+    a(href="https://myaccount.google.com/security", target='_blank') here 
+    |to learn more on how to disable 2FA
+  p.fw-bold.font-sans-serif.mb-3 Once, the above settings are done, your Google SMTP server configurations would look something like this  
+  ul
+    li
+      code MTP Server/Hostname: smtp.gmail.com
+    li
+      code MTP Username: [Your Gmail Address]
+    li
+      code SMTP password: [Your Gmail Password]
+    li
+      code SMTP Port: 587
+    li
+      code TLS/SSL: Required
+
+  p If you are using gulp based workflow, Open form-processor.js and update your smtp credential
+  Pre 
+    code.lang-js.
+      window.Email.send({
+        Host: "smtp.mailtrap.io",
+        Username: "Your User Name ",
+        Password: "Your Password",
+        To: formData.email,
+        From: "you@isp.com",
+        Subject: "This is the subject",
+        Body: `And this is the body`
+        })   
+  p.mt-3 If you are not using gulp based workflow, Open 
+    code src\js\form-processor.js 
+    |find formInit method then update your smtp credential   
+    
+  p.mt-3.mb-5 See the sample code under the form bellow for better understanding.
+  +ComponentCard
+    form(data-form onsubmit="return false")
+      label.form-label.text-700.mt-4.mb-3(for='inputName1')
+        i.fas.fa-user.me-2
+        | NAME
+      input.form-control.form-boots-control.mt-0#inputName1(type='text' name='name')
+      label.form-label.text-700.mt-4.mb-3(for='inputEmail') 
+        i.fas.fa-envelope.me-2
+        |YOUR EMAIL
+      input.form-control.form-boots-control.mt-0#inputEmail(type='email' name='email') 
+      label.form-label.text-700.mt-4.mb-3(for='validationTextarea') 
+        i.fas.fa-pen.me-2
+        |MESSAGE
+      textarea.form-control.is-invalid.border-400#validationTextarea1.form-boots-control.mt-0(placeholder='Message' rows="6" cols="50" required name='message')  
+      button.btn.btn-boots-warning.w-100.mt-5(type='submit') Send
+      .feedback 
+   
+mixin Googlemap 
+  h3.pt-5(data-anchor) Google Map
+  +ComponentCard({
+    title: 'Example',
+    anchor: true,
+    prismTitle: 'Html',
+    prismTitleClass: 'mt-5'
+  }).mb-3
+    .googlemap.min-vh-50(data-gmap data-latlng='48.8583701,2.2922873,17' data-scrollwheel='false', data-icon=`${CWD}assets/img/map-marker.png`, data-zoom='17' data-theme='Default')
+      .marker-content
+        h5 Eiffel Tower
+        p.mb-0
+          | Gustave Eiffel's iconic, wrought-iron 1889 tower,
+          br
+          |  with steps and elevators to observation decks.
+
+  h5.mt-5 JavaScript
+  +ComponentCardLib
+    script(src!="https:maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async)
+  a(href='https://developers.google.com/maps/documentation/javascript/get-api-key' target='_blank').font-sans-serif Get your API key
+    span.d-inline-block.ms-1 &xrarr;
+
+  +MapColorSchemesDemo
+  +ComponentCard({
+    title: 'Example',
+    titleClass: 'mt-5',
+    anchor: true,
+    description:"With <code> AssassianCreed </code> scheme",
+    descriptionClass:'mt-2 mb-0'
+  })
+    .googlemap.min-vh-50.mt-3( data-gmap data-latlng='48.8583701,2.2922873,17' data-scrollwheel='false' data-icon=`${CWD}assets/img/map-marker.png` data-zoom='17' data-theme='AssassianCreed')
+      .marker-content
+        h5 Eiffel Tower
+        p.mb-0
+          | Gustave Eiffel's iconic, wrought-iron 1889 tower,
+          br
+          |  with steps and elevators to observation decks.
+
+  +ComponentCard({
+    title: 'Example of street view',
+    anchor: true,
+    titleClass: 'mt-5'
+  }).mb-4
+    .googlemap.min-vh-50(data-gmap data-latlng='48.8588723,2.2932638' data-pov!={
+      heading: 120,
+      pitch: 0
+    } data-scrollwheel='false' data-icon=`${CWD}assets/img/map-marker.png`  data-zoom='1' data-theme='streetview')          
+
+mixin Changelog 
+  h3.pt-5(data-anchor) Changelog
+  h5.mb-1.mt-3 Boots5 - 1.0.0
+  p.mb-4 28 October, 2021         
+

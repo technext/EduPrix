@@ -1,0 +1,77 @@
+append variables
+  -
+    var explore= [
+      {
+        logo:'data-science.png',
+        title :'Data Science',
+        text: '78 Courses',
+        bg:'bg-soft-secondary',
+      },
+      {
+        logo:'business.png',
+        title :'Business & Management',
+        text: '67 Courses',
+        bg:'bg-soft-primary',
+      },
+      {
+        logo:'language.png',
+        title :'Language',
+        text: '85 Courses',
+        bg:'bg-soft-primary',
+      },
+      {
+        logo:'information.png',
+        title :'Information Technology',
+        text: '98 Courses',
+        bg:'bg-soft-primary',
+      },
+      {
+        logo:'film.png',
+        title :'Modernism in Oriental Art',
+        text: '68 Courses',
+        bg:'bg-soft-primary',
+      },
+      {
+        logo:'math.png',
+        title :'Compositions in Visual Art',
+        text: '878 Courses',
+        bg:'bg-soft-primary',
+      },
+      {
+        logo:'health.png',
+        title :'Health & Medical',
+        text: '79 Courses',
+        bg:'bg-soft-primary',
+      },
+      {
+        logo:'design.png',
+        title :'Design & Creative',
+        text: '37 Courses',
+        bg:'bg-soft-primary',
+      },
+    ];
+
+
+mixin Explore(config)
+  .col-md-3
+    .card.h-100(style="background-color:#2257BF;")
+      .card-body.px-4
+        .d-flex.align-items-center
+          .flex-shrink-0
+            img(src=`${CWD}assets/img/icons/${config.logo}` alt='explore')
+          .flex-grow-1.ms-3
+            h4.text-light.mb-0=config.title
+            p.text-primary.mb-0=config.text
+
+mixin ExploreEduprix
+  +Section.bg-secondary
+    .row.g-3
+      h1.header-title-explore.display-4.header.text-start.mb-5  EXPLORE EDUPRIX
+      +Explore(explore[0])
+      +Explore(explore[1])
+      +Explore(explore[2])
+      +Explore(explore[3])
+      +Explore(explore[4])
+      +Explore(explore[5])
+      +Explore(explore[6])
+      +Explore(explore[7])
