@@ -75,22 +75,34 @@ mixin Instructors
   +Section
     .row 
       .col-12
-        .swiper-container.theme-slider.gallerySwiper(data-swiper!={
-          autoplay: true,
-          loop: true,
-          slidesPerView: 1, 
-          effect: 'fade',
+        .swiper-container.theme-slider(data-swiper!={
+          spaceBetween: 5,
+          slideToClickedSlide: true,
+          slidesPerView: 4,
           pagination: {
-            type: 'bullets',
+            el: '.swiper-pagination',
             clickable: true,
-    
+            bulletActiveClass:'bullet-active'
           },
-
         })
           .swiper-wrapper
             .swiper-slide
-              +Slider(instructor[0])     
-              +Slider(instructor[1])     
-              +Slider(instructor[2])     
-              +Slider(instructor[3])     
-          .swiper-pagination            
+              +Slider(instructor[0]) 
+            .swiper-slide
+              +Slider(instructor[1]) 
+            .swiper-slide
+              +Slider(instructor[2]) 
+            .swiper-slide
+              +Slider(instructor[3])
+            .swiper-slide
+              +Slider(instructor[0]) 
+            .swiper-slide
+              +Slider(instructor[1]) 
+            .swiper-slide
+              +Slider(instructor[2]) 
+            .swiper-slide
+              +Slider(instructor[3])    
+          .swiper-nav
+            .swiper-button-next.swiper-button-white
+            .swiper-button-prev.swiper-button-white
+      .swiper-pagination         
