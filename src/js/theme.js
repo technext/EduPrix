@@ -1,7 +1,7 @@
 import { docReady } from './utils';
 import swiperInit from './swiper';
 import countupInit from './countup';
-import navbarInit from './navbar';
+// import navbarInit from './navbar';
 import detectorInit from './detector';
 
 
@@ -10,5 +10,5 @@ import detectorInit from './detector';
 /* -------------------------------------------------------------------------- */
 docReady(detectorInit);
 docReady(countupInit);
-docReady(navbarInit);
+// docReady(navbarInit);
 docReady(swiperInit);

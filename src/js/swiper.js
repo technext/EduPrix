@@ -26,7 +26,6 @@ function swiperInit(){
     return new window.Swiper(swiper, deepMerge(
       {
         slidesPerView: 1,
-    
         spaceBetween: 30,
         pagination: {
             el: document.getElementById(swiper.dataset.paginationTarget),

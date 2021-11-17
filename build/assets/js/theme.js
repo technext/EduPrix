@@ -511,171 +511,104 @@ var countupInit = function countupInit() {
     });
   }
 };
-/* eslint-disable */
-
 /*-----------------------------------------------
-|       Navbar Init
+|   Top navigation opacity on scroll
 -----------------------------------------------*/
 
 
 var navbarInit = function navbarInit() {
   var Selector = {
-    SIDEBAR_CLOSE: "[data-sidebar-close='sidebar-close']",
-    BASE_CONTENT: "[data-base-content='home'],[data-base-content='nav']",
-    PAGE: '.page',
-    GALLERY_SWIPER: '.gallerySwiper',
-    PAGE_LINK: "[data-sidebar-link='page-link']",
-    PORTFOLIO_GALLERY: "#portfolio-gallery"
+    NAVBAR: '[data-navbar-on-scroll]',
+    NAVBAR_COLLAPSE: '.navbar-collapse',
+    NAVBAR_TOGGLER: '.navbar-toggler'
   };
-  var ClassName = {
-    TRANSITION_NONE: 'transition-none',
-    PAGE: 'page',
-    DISPLAY_NONE: 'd-none'
+  var ClassNames = {
+    COLLAPSED: 'collapsed'
   };
-  var events = {
-    SHOW_OFFCANVAS: 'show.bs.offcanvas',
-    SHOWN_OFFCANVAS: 'shown.bs.offcanvas',
-    HIDE_OFFCANVAS: 'hide.bs.offcanvas',
-    HIDDEN_OFFCANVAS: 'hidden.bs.offcanvas'
+  var Events = {
+    SCROLL: 'scroll',
+    SHOW_BS_COLLAPSE: 'show.bs.collapse',
+    HIDE_BS_COLLAPSE: 'hide.bs.collapse',
+    HIDDEN_BS_COLLAPSE: 'hidden.bs.collapse'
   };
-  var closeBtnsList = Array.from(document.querySelectorAll(Selector.SIDEBAR_CLOSE));
-  var baseContentElList = Array.from(document.querySelectorAll(Selector.BASE_CONTENT));
-  var pageList = Array.from(document.querySelectorAll(Selector.PAGE));
-  var portfolioGallery = document.querySelector(Selector.PORTFOLIO_GALLERY);
-  var swipers = Array.from(document.querySelectorAll(Selector.GALLERY_SWIPER));
-  var location = window.location;
-  var history = window.history;
-  var baseContentList = baseContentElList.map(function (el) {
-    return window.bootstrap.Offcanvas.getInstance(el);
+  var DataKey = {
+    NAVBAR_ON_SCROLL: 'navbar-light-on-scroll'
+  };
+  var navbar = document.querySelector(Selector.NAVBAR); // responsive nav collapsed
+
+  navbar.addEventListener('click', function (e) {
+    if (e.target.classList.contains('nav-link') && window.innerWidth < utils.getBreakpoint(navbar)) {
+      navbar.querySelector(Selector.NAVBAR_TOGGLER).click();
+    }
   });
 
-  var showBaseContents = function showBaseContents() {
-    baseContentList.forEach(function (item) {
-      item.show();
-    });
-  };
+  if (navbar) {
+    var windowHeight = window.innerHeight;
+    var html = document.documentElement;
+    var navbarCollapse = navbar.querySelector(Selector.NAVBAR_COLLAPSE);
 
-  var hideBaseContents = function hideBaseContents() {
-    baseContentList.forEach(function (item) {
-      item.hide();
-    });
-  };
+    var allColors = _objectSpread(_objectSpread({}, utils.colors), utils.grays);
 
-  var addTransitions = function addTransitions() {
-    baseContentElList.forEach(function (el) {
-      el.classList.remove('transition-none');
-    });
-  };
+    var name = utils.getData(navbar, DataKey.NAVBAR_ON_SCROLL);
+    var colorName = Object.keys(allColors).includes(name) ? name : 'light';
+    var color = allColors[colorName];
+    var bgClassName = "bg-".concat(colorName);
+    var shadowName = 'shadow-transition';
+    var colorRgb = utils.hexToRgb(color);
 
-  var setBodyPointersEvent = function setBodyPointersEvent(event) {
-    document.body.style.pointerEvents = event;
-  };
+    var _window$getComputedSt = window.getComputedStyle(navbar),
+        backgroundImage = _window$getComputedSt.backgroundImage;
 
-  var removeTransitions = function removeTransitions() {
-    baseContentElList.forEach(function (el) {
-      el.classList.add('transition-none');
-    });
-  };
+    var transition = 'background-color 0.35s ease';
+    navbar.style.backgroundImage = 'none'; // Change navbar background color on scroll
 
-  var showPage = function showPage(page) {
-    var duration = 500;
-    page.classList.remove('d-none');
-    page.style.opacity = 0;
-    var last = +new Date();
+    window.addEventListener(Events.SCROLL, function () {
+      var scrollTop = html.scrollTop;
+      var alpha = scrollTop / windowHeight * 0.35; // Add class on scroll
 
-    var fadeIn = function fadeIn() {
-      page.style.opacity = +page.style.opacity + (new Date() - last) / duration;
-      last = +new Date();
+      navbar.classList.add('backdrop');
 
-      if (+page.style.opacity < 1) {
-        window.requestAnimationFrame && requestAnimationFrame(fadeIn) || setTimeout(fadeIn, 16);
-      }
-    };
-
-    fadeIn();
-  };
-
-  var hidePage = function hidePage(page) {
-    page.classList.add('d-none');
-    page.style.opacity = 0;
-  };
-
-  var load = function load() {
-    showBaseContents();
-
-    if (location.hash && location.hash !== '#!') {
-      removeTransitions();
-      var currentSection = document.querySelector(location.hash);
-      var currentPage = currentSection.closest(Selector.PAGE);
-
-      if (currentPage) {
-        hideBaseContents();
-        showPage(currentPage);
+      if (alpha === 0) {
+        navbar.classList.remove('backdrop');
       }
 
-      addTransitions();
-    } else {
-      addTransitions();
-    }
+      alpha >= 1 && (alpha = 1);
+      navbar.style.backgroundColor = "rgba(".concat(colorRgb[0], ", ").concat(colorRgb[1], ", ").concat(colorRgb[2], ", ").concat(alpha, ")");
+      navbar.style.backgroundImage = alpha > 0 || utils.hasClass(navbarCollapse, 'show') ? backgroundImage : 'none';
+      alpha > 0 || utils.hasClass(navbarCollapse, 'show') ? navbar.classList.add(shadowName) : navbar.classList.remove(shadowName);
+    }); // Toggle bg class on window resize
 
-    closeBtnsList.forEach(function (item) {
-      item.addEventListener('click', function (e) {
-        if (!e.target.closest(Selector.PAGE_LINK)) {
-          showBaseContents();
-          pageList.forEach(function (page) {
-            if (!page.classList.contains(ClassName.DISPLAY_NONE)) {
-              hidePage(page);
-            }
-          });
-          location.replace('#');
-          var newUrl = location.href;
-          newUrl.lastIndexOf('#') > -1 && (newUrl = newUrl.slice(0, -1));
-          history.replaceState({}, '', newUrl);
-        }
-      });
-    });
-  };
+    utils.resize(function () {
+      var breakPoint = utils.getBreakpoint(navbar);
 
-  load();
-  baseContentElList.forEach(function (item) {
-    item.addEventListener(events.SHOW_OFFCANVAS, function () {
-      setBodyPointersEvent('none');
-    });
-    item.addEventListener(events.HIDE_OFFCANVAS, function () {
-      setBodyPointersEvent('none');
-    });
-    item.addEventListener(events.SHOWN_OFFCANVAS, function () {
-      setBodyPointersEvent('all');
-    });
-    item.addEventListener(events.HIDDEN_OFFCANVAS, function () {
-      setBodyPointersEvent('all');
-    });
-  });
-
-  window.onhashchange = function (e) {
-    var newHash = e.newURL.split('#')[1];
-
-    if (newHash && newHash !== '!') {
-      var currentPage = document.querySelector('#' + newHash);
-
-      if (currentPage && currentPage.classList.contains(ClassName.PAGE)) {
-        window.scrollTo(0, 0);
-        hideBaseContents();
-        pageList.forEach(function (page) {
-          hidePage(page);
-        });
-        showPage(currentPage);
+      if (window.innerWidth > breakPoint) {
+        navbar.style.backgroundImage = html.scrollTop ? backgroundImage : 'none';
+        navbar.style.transition = 'none';
+      } else if (!utils.hasClass(navbar.querySelector(Selector.NAVBAR_TOGGLER), ClassNames.COLLAPSED)) {
+        navbar.classList.add(bgClassName);
+        navbar.classList.add(shadowName);
+        navbar.style.backgroundImage = backgroundImage;
       }
-    }
 
-    if (portfolioGallery) {
-      window.Isotope.data(portfolioGallery).arrange();
-    }
-
-    swipers.forEach(function (el) {
-      el.swiper.update();
+      if (window.innerWidth <= breakPoint) {
+        navbar.style.transition = utils.hasClass(navbarCollapse, 'show') ? transition : 'none';
+      }
     });
-  };
+    navbarCollapse.addEventListener(Events.SHOW_BS_COLLAPSE, function () {
+      navbar.classList.add(bgClassName);
+      navbar.classList.add(shadowName);
+      navbar.style.backgroundImage = backgroundImage;
+      navbar.style.transition = transition;
+    });
+    navbarCollapse.addEventListener(Events.HIDE_BS_COLLAPSE, function () {
+      navbar.classList.remove(bgClassName);
+      navbar.classList.remove(shadowName);
+      !html.scrollTop && (navbar.style.backgroundImage = 'none');
+    });
+    navbarCollapse.addEventListener(Events.HIDDEN_BS_COLLAPSE, function () {
+      navbar.style.transition = 'none';
+    });
+  }
 };
 
 var swipers = document.querySelectorAll('.swiper-container');
@@ -738,7 +671,8 @@ function swiperInit() {
       }
     }, swiper.dataset.option ? JSON.parse(swiper.dataset.option) : {}));
   });
-}
+} // import navbarInit from './navbar';
+
 /* -------------------------------------------------------------------------- */
 
 /*                            Theme Initialization                            */
@@ -747,7 +681,7 @@ function swiperInit() {
 
 
 docReady(detectorInit);
-docReady(countupInit);
-docReady(navbarInit);
+docReady(countupInit); // docReady(navbarInit);
+
 docReady(swiperInit);
 //# sourceMappingURL=theme.js.map

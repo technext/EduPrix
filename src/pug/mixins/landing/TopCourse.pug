@@ -55,11 +55,5 @@ mixin TopCourse
   +Section 
     .row 
       h1.header-title.display-4.header.text-start.mb-5  TOP COURSES
-      +Courses(courses[0])
-      +Courses(courses[1])
-      +Courses(courses[2])
-      +Courses(courses[3])
-      +Courses(courses[4])
-      +Courses(courses[5])
-      +Courses(courses[6])
-      +Courses(courses[7])
+      each item in courses
+        +Courses(item)

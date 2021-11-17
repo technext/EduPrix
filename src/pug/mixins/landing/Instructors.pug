@@ -1,6 +1,6 @@
 append variables
   -
-    var instructors= [
+    var instructor= [
       {
 
         image:'john.png',
@@ -8,18 +8,89 @@ append variables
         designation:'Head of Data Science',
       },
       {
-        image:'john.png',
+        image:'albrecht.png',
         name:`Albrecht <br> Kachher`,
-        designation:'Head of Data Science',
+        designation:'Developer and Lead Instructor',
       },
       {
-        image:'john.png',
+        image:'peter.png',
         name:`Peter P. <br> Rubens`,
-        designation:'Head of Data Science',
+        designation:'Digital Marketing Expart',
       },
       {
-        image:'john.png',
+        image:'david.png',
+        name: `David A. <br> Sequiros`,
+        designation:'Engineering Architect',
+      },
+      {
+        image:'david.png',
         name: `David A. <br> Sequiros`,
         designation:'Head of Data Science',
       },
+      //-  {
+      //-   image:'john.png',
+      //-   name: `David A. <br> Sequiros`,
+      //-   designation:'Head of Data Science',
+      //- },
+      //-  {
+      //-   image:'john.png',
+      //-   name: `David A. <br> Sequiros`,
+      //-   designation:'Head of Data Science',
+      //- },
+      //-  {
+      //-   image:'john.png',
+      //-   name: `David A. <br> Sequiros`,
+      //-   designation:'Head of Data Science',
+      //- },
+      //-  {
+      //-   image:'john.png',
+      //-   name: `David A. <br> Sequiros`,
+      //-   designation:'Head of Data Science',
+      //- },
+      //-  {
+      //-   image:'john.png',
+      //-   name: `David A. <br> Sequiros`,
+      //-   designation:'Head of Data Science',
+      //- },
+      //-  {
+      //-   image:'john.png',
+      //-   name: `David A. <br> Sequiros`,
+      //-   designation:'Head of Data Science',
+      //- },
+      //- {
+      //-   image:'john.png',
+      //-   name: `David A. <br> Sequiros`,
+      //-   designation:'Head of Data Science',
+      //- },
     ];
+
+mixin Slider({image,name,designation})
+  img(src=`${CWD}assets/img/gallery/${image}`  alt='').img-fluid
+  h5.fw-normal.font-base.lh-base.text-black.mt-3 !{name}
+  p.mb-0 !{designation}
+
+
+
+mixin Instructors
+  +Section
+    .row 
+      .col-12
+        .swiper-container.theme-slider.gallerySwiper(data-swiper!={
+          autoplay: true,
+          loop: true,
+          slidesPerView: 1, 
+          effect: 'fade',
+          pagination: {
+            type: 'bullets',
+            clickable: true,
+    
+          },
+
+        })
+          .swiper-wrapper
+            .swiper-slide
+              +Slider(instructor[0])     
+              +Slider(instructor[1])     
+              +Slider(instructor[2])     
+              +Slider(instructor[3])     
+          .swiper-pagination            
