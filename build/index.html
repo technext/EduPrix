@@ -308,8 +308,8 @@
           <h1 class="header-title display-4 header text-start mb-5"> STUDENT REVIEW</h1>
           <div class="row flex-center h-100">
             <div class="col-12">
-              <div class="row px-3 px-sm-6 px-md-0 px-lg-5 px-xl-4">
-                <div class="col-12 position-relative"><button class="carousel-control-prev" type="button" data-bs-target="#carouselStudentReview" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#carouselStudentReview" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>
+              <div class="row justify-content-end">
+                <div class="col-2 position-relative"><button class="carousel-control-prev carousel-icon" type="button" data-bs-target="#carouselStudentReview" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#carouselStudentReview" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>
               </div>
               <div class="carousel slide" id="carouselStudentReview" data-bs-ride="carousel">
                 <div class="carousel-inner ps-4">
@@ -412,20 +412,68 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <div class="swiper-container theme-slider gallerySwiper" data-swiper='{"autoplay":true,"loop":true,"slidesPerView":1,"effect":"fade","pagination":{"type":"bullets","clickable":true}}'>
+              <h1 class="header-title display-4 header text-center mb-5"> MEET OUR INSTRUCTORS</h1>
+              <div class="swiper-container theme-slider" data-swiper='{"spaceBetween":1,"slideToClickedSlide":true,"slidesPerView":4,"pagination":{"el":".swiper-pagination","clickable":true,"bulletActiveClass":"bullet-active"}}'>
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img class="img-fluid" src="assets/img/gallery/john.png" alt="" />
-                    <h5 class="fw-normal font-base lh-base text-black mt-3">John S. <br> Sergent</h5>
-                    <p class="mb-0">Head of Data Science</p><img class="img-fluid" src="assets/img/gallery/albrecht.png" alt="" />
-                    <h5 class="fw-normal font-base lh-base text-black mt-3">Albrecht <br> Kachher</h5>
-                    <p class="mb-0">Developer and Lead Instructor</p><img class="img-fluid" src="assets/img/gallery/peter.png" alt="" />
-                    <h5 class="fw-normal font-base lh-base text-black mt-3">Peter P. <br> Rubens</h5>
-                    <p class="mb-0">Digital Marketing Expart</p><img class="img-fluid" src="assets/img/gallery/david.png" alt="" />
-                    <h5 class="fw-normal font-base lh-base text-black mt-3">David A. <br> Sequiros</h5>
-                    <p class="mb-0">Engineering Architect</p>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/john.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">John S. <br> Sergent</h5>
+                      <p class="mb-0">Head of Data Science</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/albrecht.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">Albrecht <br> Kachher</h5>
+                      <p class="mb-0">Developer and Lead Instructor</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/peter.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">Peter P. <br> Rubens</h5>
+                      <p class="mb-0">Digital Marketing Expart</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/david.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">David A. <br> Sequiros</h5>
+                      <p class="mb-0">Engineering Architect</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/john.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">John S. <br> Sergent</h5>
+                      <p class="mb-0">Head of Data Science</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/albrecht.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">Albrecht <br> Kachher</h5>
+                      <p class="mb-0">Developer and Lead Instructor</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/peter.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">Peter P. <br> Rubens</h5>
+                      <p class="mb-0">Digital Marketing Expart</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-center"><img src="assets/img/gallery/david.png" alt="" />
+                      <h5 class="fw-normal font-base lh-base text-black mt-3">David A. <br> Sequiros</h5>
+                      <p class="mb-0">Engineering Architect</p>
+                    </div>
                   </div>
                 </div>
-                <div class="swiper-pagination"> </div>
+                <div class="swiper-nav position-relative">
+                  <div class="swiper-button-next"> <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="42" height="27" fill="currentColor" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                    </svg></div>
+                  <div class="swiper-button-prev"> <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="42" height="27" fill="currentColor" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+                    </svg></div>
+                </div>
+                <div class="swiper-pagination position-static d-flex justify-contnet-evenly mx-2 mt-5"> </div>
+                <div class="d-flex justify-content-end mt-n5"><a class="btn btn-link text-decoration-none m-2" href="#!"> See all </a></div>
               </div>
             </div>
           </div>

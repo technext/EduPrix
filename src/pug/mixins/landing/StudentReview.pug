@@ -42,15 +42,16 @@ mixin StudentReview
       h1.header-title.display-4.header.text-start.mb-5  STUDENT REVIEW
       .row.flex-center.h-100
         .col-12
-          .row.px-3.px-sm-6.px-md-0.px-lg-5.px-xl-4
-            .col-12.position-relative
-              //- .position-relative.offset-9.offset-sm-10.offset-lg-11.mb-3
-              button.carousel-control-prev(type='button' data-bs-target='#carouselStudentReview' data-bs-slide='prev')
+          .row.justify-content-end
+            .col-2.position-relative
+                 
+              button.carousel-control-prev.carousel-icon(type='button' data-bs-target='#carouselStudentReview' data-bs-slide='prev')
                 span.carousel-control-prev-icon(aria-hidden='true')
                 span.visually-hidden Previous
               button.carousel-control-next(type='button' data-bs-target='#carouselStudentReview' data-bs-slide='next')
                 span.carousel-control-next-icon(aria-hidden='true')
                 span.visually-hidden Next
+          
           #carouselStudentReview.carousel.slide(data-bs-ride='carousel')
             .carousel-inner.ps-4
               .carousel-item.active
