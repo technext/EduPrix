@@ -5,6 +5,9 @@ include mixins/landing/ExploreEduprix
 include mixins/landing/StudentReview
 include mixins/landing/FunFacts
 include mixins/landing/Instructors
+include mixins/landing/Blog
+include mixins/landing/Cta
+include mixins/landing/Footer
 
 append styles
   link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`, rel='stylesheet')
@@ -25,3 +28,6 @@ block content
   +StudentReview
   +Funfacts
   +Instructors
+  +Blogs
+  +Cta 
+  +PreFooter 

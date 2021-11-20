@@ -9,7 +9,6 @@ $variable-prefix: 'EduPrix-';
 $container-max-widths: () !default;
 $container-max-widths: map-merge(
   (
-    xs: 0,
     sm: 576px,
     md: 768px,
     lg: 992px,
@@ -155,22 +154,24 @@ $font-family-base: $font-family-sans-serif !default;
 //*-----------------------------------------------
 //|   Fonts
 //-----------------------------------------------*/
-$type-scale: 1.333;
+$type-scale: 1.25;
 $font-size-base: 1rem !default;
 $font-sizes: () !default;
-
-$font-sizes: () !default;
-$font-sizes: (
-  '-1': 0.75rem,
-  0: 1rem,
-  1: 1.333rem,
-  2: 1.777rem,
-  3: 2.369rem,
-  4: 3.157rem,
-  5: 4.199rem,
-  6: 5.584rem,
-  7: 7.427rem,
-  8: 9.878rem,
+$font-sizes: map-merge(
+  (
+    '-2': 1 / pow($type-scale, 2) * $font-size-base,
+    '-1': 1 / $type-scale * $font-size-base,
+    0: $font-size-base,
+    1: pow($type-scale, 1) * $font-size-base,
+    2: pow($type-scale, 2) * $font-size-base,
+    3: pow($type-scale, 3) * $font-size-base,
+    4: pow($type-scale, 4) * $font-size-base,
+    5: pow($type-scale, 5) * $font-size-base,
+    6: pow($type-scale, 6) * $font-size-base,
+    7: pow($type-scale, 7) * $font-size-base,
+    8: pow($type-scale, 8) * $font-size-base,
+  ),
+  $font-sizes
 );
 
 $font-size-lg: map_get($font-sizes, 1) !default;

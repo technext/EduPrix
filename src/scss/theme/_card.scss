@@ -1,19 +1,19 @@
 /*-----------------------------------------------
 |   Card
 -----------------------------------------------*/
-.card{
-  border-radius: 0;
-  border: 0;
-}
-.card-link {
-  font-size: map_get($font-sizes, "-1");
-  font-weight: $font-weight-semi-bold;
-}
+// .card{
+//   border-radius: 0;
+//   border: 0;
+// }
+// .card-link {
+//   font-size: map_get($font-sizes, "-1");
+//   font-weight: $font-weight-semi-bold;
+// }
 
-.card-body:last-child {
-  border-bottom-left-radius: $card-border-radius;
-  border-bottom-right-radius: $card-border-radius;
-}
+// .card-body:last-child {
+//   border-bottom-left-radius: $card-border-radius;
+//   border-bottom-right-radius: $card-border-radius;
+// }
 
 
 /*-----------------------------------------------
