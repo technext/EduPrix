@@ -53,16 +53,16 @@ append variables
 
 
 mixin Explore(config)
-  .col-md-3
+  .col-sm-6.col-lg-3
     .card.h-100(style="background-color:#2257BF;")
-      .card-body.px-4
+      .card-body.px-4.px-lg-2.px-xl-4
         .d-flex.align-items-center
           .flex-shrink-0
             img(src=`${CWD}assets/img/icons/${config.logo}` alt='explore')
           .flex-grow-1.ms-3
-            h4.text-light.mb-0=config.title
-            p.text-primary.mb-0=config.text
-
+            h4.fs-lg-1.text-light.mb-0=config.title
+            a.stretched-link.text-primary(href='#!')=config.text
+           
 mixin ExploreEduprix
   +Section.bg-secondary
     .row.g-3

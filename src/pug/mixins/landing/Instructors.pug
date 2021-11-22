@@ -64,7 +64,7 @@ append variables
     ];
 mixin Slider(config)
   .text-center
-    img(src=`${CWD}assets/img/gallery/${config.image}`  alt='')
+    img.w-100(src=`${CWD}assets/img/gallery/${config.image}`  alt='')
     h5.fw-normal.font-base.lh-base.text-black.mt-3 !{config.name}
     p.mb-0 !{config.designation}
 
@@ -77,13 +77,26 @@ mixin Instructors
         .swiper-container.theme-slider(data-swiper!={
           spaceBetween: 1,
           slideToClickedSlide: true,
-          slidesPerView: 4,
-
+         
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
             bulletActiveClass:'bullet-active'
           },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            640: {
+              slidesPerView: 4,
+              spaceBetween: 40
+            }
+          }
         })
           .swiper-wrapper
             .swiper-slide
@@ -111,9 +124,9 @@ mixin Instructors
                 path(fill-rule='evenodd' d='M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z')
 
           .swiper-pagination.position-static.d-flex.justify-contnet-evenly.mx-2.mt-5 
-          .d-flex.justify-content-end.mt-n5
+          .d-flex.justify-content-sm-end.justify-content-center.mt-sm-n5
             a.btn.btn-link.text-decoration-none.m-2(href="#!")  See all  
           .swiper-nav
             .swiper-button-next.swiper-button-white
             .swiper-button-prev.swiper-button-white
-      .swiper-pagination         
+      .swiper-pagination.text-center        

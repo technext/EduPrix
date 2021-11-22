@@ -32,7 +32,7 @@ mixin Testimonial(config)
 
   .col-md-5.col-lg-6.col-xl-7.mb-4
     +Background({image: `${CWD}assets/img/gallery/quotation.png`, attrs: { style: { 'background-position': 'top center', 'background-size': 'auto',} }, className: 'z-index--1' })
-    h1.fw-normal.lh-1!=config.name
+    h1.fw-normal.lh-1.mt-4.mt-md-0!=config.name
     h4.fw-light=config.country 
     p.mt-4.pe-xxl-8=config.text
 
@@ -43,8 +43,7 @@ mixin StudentReview
       .row.flex-center.h-100
         .col-12
           .row.justify-content-end
-            .col-2.position-relative
-                 
+            .col-2.position-xl-relative  
               button.carousel-control-prev.carousel-icon(type='button' data-bs-target='#carouselStudentReview' data-bs-slide='prev')
                 span.carousel-control-prev-icon(aria-hidden='true')
                 span.visually-hidden Previous

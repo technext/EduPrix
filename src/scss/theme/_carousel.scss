@@ -1,4 +1,44 @@
 // //*----------------------------- from bootstrap carousel ------------------*//
+@include media-breakpoint-up(xxl) {
+  .carousel-icon{
+    left: 166px !important;
+    right: 0 !important;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .carousel-icon{
+    left: 126px !important;
+    right: 0 !important;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 4.2rem;
+  left: 5%;
+  padding-top: 1.25rem;
+  padding-bottom: 4rem;
+  color: #fff;
+  text-align: center;
+}
+
+.carousel-indicators.custom-indicators{
+  margin-left: 5%;
+  margin-bottom: .3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // .carousel-control-prev,
 // .carousel-control-next {
@@ -34,31 +74,21 @@
 //   background-image: if($enable-gradients, linear-gradient(270deg, rgba($black, .25), rgba($black, .001)), null);
 // }
 
-// .carousel-indicators {
-//   position: static;
-//   justify-content: start;
-//   margin:  0;
+.carousel-indicators {
+  // position: static;
+  // justify-content: start;
+  margin:  0;
+  // width: 11px;
+  // height: 11px;
 
-//  li{
-//   border-radius: 50%;
-
-//  }
-
-//   .active {
-//     opacity: $carousel-indicator-active-opacity;
-//     background-color: $secondary;
-//     width: 9px;
-//     height:9px;
-//   }
-// }
+  .active {
+    opacity: $carousel-indicator-active-opacity;
+    // width: 40px;
+    border-radius: 0;
+  }
+}
 
 // .carousel-control-prev {
 //   left: auto;
 //   right: 45px;
 // }
-
-
-.carousel-icon{
-  left: 166px !important;
-  right: 0 !important;
-}

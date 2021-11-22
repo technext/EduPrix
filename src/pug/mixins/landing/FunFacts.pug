@@ -15,7 +15,7 @@ append variables
         text: `Learners from all around <br>  the world.`,
       },
       {
-        image:'happy-learners.png',
+        image:'instructors.png',
         number: '578',
         title :`Eminent <br> Instructors`,
         text:`Learn your favourite course with <br>  world-class instructors. `,
@@ -24,15 +24,15 @@ append variables
     ];
 
 mixin Fun(config)
-  .col-12.col-md.text-center
-    img.mb-5(src=`${CWD}assets/img/illustrations/${config.image}` alt="rectangle")
+  .col-12.col-md-6.col-lg-3.text-center.mb-5.mb-lg-0
+    img.mb-5(src=`${CWD}assets/img/illustrations/${config.image}` height="140" alt="rectangle")
     h1.text-secondary=config.number
     h1.fw-normal.text-secondary!=config.title
     p!=config.text
 
 mixin Funfacts
   +Section.bg-soft-primary
-    .row
+    .row.flex-center
       each item in funfacts
         +Fun(item)
 

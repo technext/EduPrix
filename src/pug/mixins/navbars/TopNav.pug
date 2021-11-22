@@ -1,6 +1,6 @@
 mixin TopNav
-  section(class="d-none d-sm-block py-4")
-    +Background({image: `${CWD}assets/img/gallery/hero-header-bg.png`, attrs: { style: { 'background-position': 'top center', 'background-size': 'cover', 'padding':'16rem 0'} }, className: '' })
+  section(class="py-3" style="background-color:#10203F;")
+    //- +Background({image: `${CWD}assets/img/illustrations/bg-circle.png`, attrs: { style: {'background-size': 'auto','margin-left': '-643px','margin-top':'-25px'} }, className: '' })
     .container
       .row.justify-content-between
         .col-auto.d-none.d-lg-block
@@ -9,42 +9,13 @@ mixin TopNav
 
         .col-auto.order-md-2.d-none.d-sm-block
           p.my-2.fs--1
-            i.fas.fa-user.text-primary.me-3          
+            i.fas.fa-user.text-info.me-3          
         .col-auto
           .d-flex.align-items-center
-            p.mb-0.me-3.text-primary.fw-bolder.lh-1 SEARCH 
+            p.mb-0.me-3.text-primary.fw-bolder.lh-1.opacity-50 SEARCH 
               br
               |ANYTHING
             form
               .input-group.d-flex.flex-end-center
                 input#formGroupExampleInput.form-control.form-eduprix-control.rounded-pill.shadow-lg.border-0(type='text' placeholder='Ex: Modern Art' )
-                img(src=`${CWD}assets/img/illustrations/search.png` width="30" alt='').input-box-icon 
-    +Section
-      .row
-        #carouselExampleCaptions.carousel.slide(data-bs-ride='carousel')
-          .carousel-indicators
-            button.active(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
-            button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1' aria-label='Slide 2')
-            button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2' aria-label='Slide 3')
-          .carousel-inner
-            .carousel-item.active
-              img.d-block.w-100(src=`${CWD}assets/img/gallery/slider-1.png` alt='...')
-              .carousel-caption.d-none.d-md-block
-                h5 First slide label
-                p Some representative placeholder content for the first slide.
-            .carousel-item
-              img.d-block.w-100(src=`${CWD}assets/img/gallery/slider-1.png` alt='...')
-              .carousel-caption.d-none.d-md-block
-                h5 Second slide label
-                p Some representative placeholder content for the second slide.
-            .carousel-item
-              img.d-block.w-100(src=`${CWD}assets/img/gallery/slider-1.png` alt='...')
-              .carousel-caption.d-none.d-md-block
-                h5 Third slide label
-                p Some representative placeholder content for the third slide.
-          button.carousel-control-prev(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='prev')
-            span.carousel-control-prev-icon(aria-hidden='true')
-            span.visually-hidden Previous
-          button.carousel-control-next(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='next')
-            span.carousel-control-next-icon(aria-hidden='true')
-            span.visually-hidden Next   
+                img(src=`${CWD}assets/img/illustrations/search.png` width="34" alt='').input-box-icon 

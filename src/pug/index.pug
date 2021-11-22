@@ -1,5 +1,5 @@
 extends layouts/LayoutTheme
-include mixins/common/Courses
+include mixins/landing/Heroheader
 include mixins/landing/TopCourse
 include mixins/landing/ExploreEduprix
 include mixins/landing/StudentReview
@@ -23,11 +23,12 @@ append footerStyles
 
 block content 
   +TopNav
+  +Heroheader
   +TopCourse
   +ExploreEduprix
   +StudentReview
   +Funfacts
   +Instructors
-  +Blogs
-  +Cta 
+  //- +Blogs
+  //- +Cta 
   +PreFooter 

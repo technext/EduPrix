@@ -9,11 +9,11 @@ $variable-prefix: 'EduPrix-';
 $container-max-widths: () !default;
 $container-max-widths: map-merge(
   (
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1480px,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
   ),
   $container-max-widths
 );
@@ -26,7 +26,7 @@ $grid-breakpoints: map-merge(
     md: 720px,
     lg: 960px,
     xl: 1140px,
-    xxl: 1440px,
+    xxl: 1320px,
   ),
   $grid-breakpoints
 );
@@ -486,22 +486,15 @@ $breadcrumb-divider: quote('/') !default;
 //|   Carousel
 //-----------------------------------------------*/
 $carousel-transition-duration: 0.8s !default;
-$carousel-control-color:             $primary !default;
-
-
 $carousel-indicator-width:           40px !default;
 $carousel-indicator-height:          6px !default;
-// $carousel-indicator-active-bg:       $primary !default;
+$carousel-indicator-active-bg:       $primary !default;
 
-
-//*-----------------------------------------------
-//|   carousel
-//-----------------------------------------------*/
-$carousel-control-opacity: 0.9 !default;
-$carousel-control-hover-opacity: 0.9 !default;
+// $carousel-control-opacity: 0.9 !default;
+// $carousel-control-hover-opacity: 0.9 !default;
 // $carousel-control-color:     $danger !default;
 
-$carousel-indicator-active-bg:       $primary !default;
+// $carousel-indicator-active-bg:       $info !default;
 $carousel-indicator-width:           10px !default;
 $carousel-indicator-height:          10px !default;
 // $carousel-indicator-hit-area-height : 0 !default;

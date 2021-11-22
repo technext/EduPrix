@@ -73,19 +73,6 @@
 // }
 
 
-.header-title{
-  color: #003294;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #003294;
-}
-
-@supports (-webkit-text-stroke: 1px #003294) {
-  .header-title{
-    -webkit-text-stroke: 1px #003294;
-    -webkit-text-fill-color: white;
-  }
-}
 
 .header-title-explore{
   color: #00B2FF;
@@ -107,6 +94,11 @@
   transform: translate(-50%, -50%);
 }
 
-
+.rectangle{
+  position: absolute;
+  left: 15px;
+  top: 54%;
+  transform: translate(-50%, -50%);
+}
 // explore eduprix
 
