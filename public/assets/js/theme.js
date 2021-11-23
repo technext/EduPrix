@@ -463,7 +463,23 @@ var DomNode = /*#__PURE__*/function () {
   }]);
 
   return DomNode;
-}();
+}(); // import utils from './utils';
+
+/* -------------------------------------------------------------------------- */
+
+/*                                  Count Up                                  */
+
+/* -------------------------------------------------------------------------- */
+
+
+var carouselInit = function carouselInit() {
+  var heroCarousel = document.getElementById('hero-carousel');
+  var counterEl = document.getElementById('heroSlidercounter');
+  heroCarousel.addEventListener('slide.bs.carousel', function (e) {
+    var count = "0".concat(e.to + 1);
+    counterEl.innerHTML = count;
+  });
+};
 /* -------------------------------------------------------------------------- */
 
 /*                                  Count Up                                  */
@@ -646,4 +662,5 @@ docReady(detectorInit);
 docReady(countupInit); // docReady(navbarInit);
 
 docReady(swiperInit);
+docReady(carouselInit);
 //# sourceMappingURL=theme.js.map

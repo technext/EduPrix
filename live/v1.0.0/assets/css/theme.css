@@ -1222,9 +1222,9 @@ progress {
     max-width: 1140px;
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 1420px;
   }
 }
 .row {
@@ -2819,7 +2819,7 @@ progress {
     --EduPrix-gutter-y: 15rem;
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .col-xxl {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 0%;
@@ -3323,7 +3323,7 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
-@media (max-width: 1319.98px) {
+@media (max-width: 1419.98px) {
   .table-responsive-xl {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -4973,7 +4973,7 @@ textarea.form-control-lg {
     left: auto;
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .dropdown-menu-xxl-start {
     --bs-position: start;
   }
@@ -5795,7 +5795,7 @@ textarea.form-control-lg {
     overflow-y: visible;
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .navbar-expand-xxl {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -6905,7 +6905,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
 }
-@media (max-width: 1319.98px) {
+@media (max-width: 1419.98px) {
   .modal-fullscreen-xl-down {
     width: 100vw;
     max-width: none;
@@ -7597,7 +7597,7 @@ textarea.form-control-lg {
     z-index: 1015;
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .sticky-xxl-top {
     position: -webkit-sticky;
     position: sticky;
@@ -17855,7 +17855,7 @@ textarea.form-control-lg {
     border-radius: 0 !important;
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .float-xxl-start {
     float: left !important;
   }
@@ -20823,14 +20823,6 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 /*-----------------------------------------------
 |   Background gradient
 -----------------------------------------------*/
-.bg-carousel-soft-primary {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 87, 191, 0.25)));
-  background: -o-linear-gradient(rgba(34, 87, 191, 0.25));
-  background: linear-gradient(rgba(34, 87, 191, 0.25));
-  width: 192px;
-  height: 464px;
-}
-
 /* -------------------------------------------------------------------------- */
 /*                                   Borders                                  */
 /* -------------------------------------------------------------------------- */
@@ -21449,7 +21441,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
     height: auto;
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .line-icons {
     width: 115px;
     height: auto;
@@ -21896,7 +21888,7 @@ iframe.yt-video.loaded {
     transform: scale(0.5);
   }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .carousel-icon {
     left: 166px !important;
     right: 0 !important;
@@ -21930,5 +21922,14 @@ iframe.yt-video.loaded {
 .carousel-indicators .active {
   opacity: 1;
   border-radius: 0;
+}
+
+.bg-carousel-soft-primary {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 87, 191, 0.25)));
+  background: -o-linear-gradient(rgba(34, 87, 191, 0.25));
+  background: linear-gradient(rgba(34, 87, 191, 0.25));
+  width: 192px;
+  height: 443px;
+  margin-left: 42px;
 }
 /*# sourceMappingURL=theme.css.map */
