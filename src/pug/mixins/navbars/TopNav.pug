@@ -1,6 +1,6 @@
 mixin TopNav
   section(class="py-3" style="background-color:#10203F;")
-    .container
+    .container#topNav
       .row.justify-content-between
         .col-auto.d-none.d-lg-block
           a.navbar-brand(href='index.html')
@@ -9,6 +9,7 @@ mixin TopNav
         .col-auto.order-md-2.d-none.d-sm-block
           p.my-2.fs--1
             i.fas.fa-user.text-info.me-3          
+        
         .col-auto
           .d-flex.align-items-center
             p.mb-0.me-3.text-primary.text-end.fw-bolder.lh-1.opacity-50 SEARCH 

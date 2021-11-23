@@ -4,6 +4,7 @@ import countupInit from './countup';
 // import navbarInit from './navbar';
 import detectorInit from './detector';
 import carouselInit from './carousel';
+import heroHeaderInit from './hero-header';
 
 
 /* -------------------------------------------------------------------------- */
@@ -14,3 +15,4 @@ docReady(countupInit);
 // docReady(navbarInit);
 docReady(swiperInit);
 docReady(carouselInit);
+docReady(heroHeaderInit);

@@ -45,7 +45,12 @@
 
 .bg-carousel-soft-primary{
   background: linear-gradient(rgba(34, 87, 191, 0.25));
-  width:192px;
+  width:172px;
   height:443px;
-  margin-left: 42px;
+  top: 0;
+  left: 100%;
+  font-size: 4.768371582rem;
+  opacity: 0.5;
+  font-weight: 700;
+  color: $primary;
 }

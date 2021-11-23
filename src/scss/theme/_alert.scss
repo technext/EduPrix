@@ -94,11 +94,15 @@
   transform: translate(-50%, -50%);
 }
 
-.rectangle{
+.slider-rectangle{
   position: absolute;
-  left: 15px;
-  top: 54%;
-  transform: translate(-50%, -50%);
+  left: -32px;
+  top: 45%;
 }
+
+.hero-carousel-container{
+  width: 80% !important;
+}
+
 // explore eduprix
 
