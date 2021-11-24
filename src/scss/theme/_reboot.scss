@@ -3,13 +3,11 @@
 -----------------------------------------------*/
 ::placeholder {
   opacity: 1;
-  color: $gray-1000;
+  color: $gray-100;
 }
 
 html {
   padding:0;
-  // scroll-behavior: smooth;
-  // -webkit-overflow-scrolling: smooth;
 }
 
 body {

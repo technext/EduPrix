@@ -1,7 +1,6 @@
 import { docReady } from './utils';
 import swiperInit from './swiper';
 import countupInit from './countup';
-// import navbarInit from './navbar';
 import detectorInit from './detector';
 import carouselInit from './carousel';
 import heroHeaderInit from './hero-header';
@@ -12,7 +11,6 @@ import heroHeaderInit from './hero-header';
 /* -------------------------------------------------------------------------- */
 docReady(detectorInit);
 docReady(countupInit);
-// docReady(navbarInit);
 docReady(swiperInit);
 docReady(carouselInit);
 docReady(heroHeaderInit);

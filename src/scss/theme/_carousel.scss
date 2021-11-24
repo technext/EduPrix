@@ -16,12 +16,14 @@
 .carousel-caption {
   position: absolute;
   right: 15%;
-  bottom: 4.2rem;
   left: 5%;
   padding-top: 1.25rem;
   padding-bottom: 4rem;
   color: #fff;
   text-align: center;
+  @include media-breakpoint-up(xxl) {
+    bottom: 4.2rem;
+  }
 }
 
 .carousel-indicators.custom-indicators{
@@ -30,27 +32,56 @@
 }
 
 .carousel-indicators {
-  // position: static;
-  // justify-content: start;
   margin:  0;
-
-
   .active {
     opacity: $carousel-indicator-active-opacity;
     border-radius: 0;
   }
 }
 
-
-
 .bg-carousel-soft-primary{
+  position: absolute ;
   background: linear-gradient(rgba(34, 87, 191, 0.25));
   width:172px;
-  height:443px;
-  top: 0;
-  left: 100%;
   font-size: 4.768371582rem;
   opacity: 0.5;
   font-weight: 700;
   color: $primary;
+}
+
+.course-logo{
+  position: absolute;
+  left: 34px;
+  transform: translate(-50%, -50%);
+}
+
+.slider-rectangle{
+  position: absolute;
+  left: -46px;
+  top: 45%;
+}
+
+
+
+.hero-carousel-container{
+  padding: 0;
+  @include media-breakpoint-up(xl) {
+    padding: 0 125px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 0 225px;
+  }
+}
+
+
+.hero-slider-counter{
+  position: absolute;
+  left: 37px;
+  top: 17%;
+}
+
+.hero-social-icons{
+  position: absolute;
+  right: 0;
+  top: -44px;
 }

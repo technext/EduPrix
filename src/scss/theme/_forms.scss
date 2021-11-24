@@ -17,18 +17,9 @@
 
 .form-eduprix-control{
   padding: .375rem 1.8rem;
+  font-weight: $font-weight-normal;
+  font-size: map-get($font-sizes, -1);
 }
-
-// label{
-//   font-size: map_get($font-sizes, '-1');
-//   font-weight: $font-weight-bold;
-//   letter-spacing: 0.02em;
-// }
-// // input.form-control{
-// //   border-image-source: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 0, 51, 0.5));
-// //   border-width: 2pt;
-// //   border-image-slice: 1;
-// // }
 
 
 // .form-boots-control {
@@ -47,16 +38,3 @@
 //     outline: 0;
 //   }
 // }
-// textarea.form-control{
-//   border: none;
-//   &:active,
-//   &:focus {
-//     color: $black;
-//     font-weight: 700;
-//     background-color: $gray-100;
-//     box-shadow: none !important;
-//     outline: 0;
-//   }
-// }
-
-// /

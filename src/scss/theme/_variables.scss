@@ -266,6 +266,8 @@ $input-btn-padding-x-sm: 1.2rem !default;
 $input-btn-padding-y-lg: 1.2rem !default;
 $input-btn-padding-x-lg: 5rem !default;
 
+$input-placeholder-color: $gray-300 !default;
+
 $btn-reveal-hover-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1),
   0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba($black, 0.07),
   0 1px 2px 0 rgba($black, 0.08) !default;
@@ -273,37 +275,17 @@ $btn-font-weight: $font-weight-bold !default;
 $btn-focus-width: 0 !default;
 
 $btn-border-radius-lg: $border-radius;
-//$btn-line-height: 1.5 !default; //- need to review4
-//btn-close
-// $btn-close-color:            $white !default;
 $btn-close-width:            1.2em !default;
 
 
 //*-----------------------------------------------
 //|   Forms
 //-----------------------------------------------*/
-$input-disabled-bg: var(--#{$variable-prefix}200) !default;
-$input-group-addon-bg: var(--#{$variable-prefix}200) !default;
-$input-border-color: var(--#{$variable-prefix}input-border-color) !default;
-$input-placeholder-color: var(--#{$variable-prefix}600) !default;
-$input-color: var(--#{$variable-prefix}input-color) !default;
-$form-check-margin-bottom: 0.34375rem !default;
-$form-label-font-size: $font-size-sm !default;
-$form-check-input-bg: transparent !default;
-$form-check-input-border: 1px solid var(--#{$variable-prefix}form-check-input-border-color) !default;
-$form-switch-color: $gray-500 !default;
-$form-select-disabled-bg: var(--#{$variable-prefix}200) !default;
-$input-bg: var(--#{$variable-prefix}input-bg) !default;
-// $input-focus-border-color: var(--#{$variable-prefix}input-focus-border-color) !default;
-$form-file-button-bg: $gray-900 !default;
-$form-file-button-color: $gray-300 !default;
 
 $input-padding-x: $input-btn-padding-y !default;
 $input-padding-x-sm: $input-btn-padding-y-sm !default;
 $input-padding-x-lg: $input-btn-padding-y-lg !default;
 $input-box-shadow: 'null' !default;
-
-
 
 //*-----------------------------------------------
 //|   Z-index
