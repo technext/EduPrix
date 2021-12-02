@@ -25,3 +25,12 @@
       color: $secondary;
     }
 }
+
+.form-eduprixsearch-control{
+  padding: .375rem 2.5rem;
+  border: $primary;
+  &:active,
+  &:focus {
+    color: $gray-300;
+  }
+}
