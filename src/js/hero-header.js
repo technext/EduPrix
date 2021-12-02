@@ -5,29 +5,34 @@
 /* -------------------------------------------------------------------------- */
 
 const heroHeaderInit = () => {
-  const topNav = document.getElementById('topNav');
-  const heroCarouselInner = document.getElementById('hero-carousel');
-  const heroCarouselContainer = document.getElementById('heroCarouselContainer');
-  const heroSlidercounterContainer = document.getElementById('heroSlidercounterContainer');
-
+  const topNav = document.getElementById("topNav");
+  const heroCarouselInner = document.getElementById("hero-carousel");
+  const heroCarouselContainer = document.getElementById(
+    "heroCarouselContainer"
+  );
+  const heroSlidercounterContainer = document.getElementById(
+    "heroSlidercounterContainer"
+  );
 
   const setCarouselContainerMargin = () => {
-    heroCarouselContainer.style.paddingLeft = getComputedStyle(topNav).marginLeft;
-  }
+    heroCarouselContainer.style.paddingLeft =
+      getComputedStyle(topNav).marginLeft;
+  };
 
   const setHeroCarouselInnerheight = () => {
-    heroSlidercounterContainer.style.height = getComputedStyle(heroCarouselInner).height;
-  }
-  window.addEventListener('resize', () => {
+    heroSlidercounterContainer.style.height =
+      getComputedStyle(heroCarouselInner).height;
+  };
+  window.addEventListener("resize", () => {
     if (window.innerWidth > 960) {
-      setCarouselContainerMargin()
-      setHeroCarouselInnerheight()
+      setCarouselContainerMargin();
+      setHeroCarouselInnerheight();
     }
-  })
+  });
 
   setTimeout(() => {
-    window.dispatchEvent(new Event('resize'));
-  }, 5)
+    window.dispatchEvent(new Event("resize"));
+  }, 5);
 };
 
 export default heroHeaderInit;

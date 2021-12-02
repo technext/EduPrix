@@ -131,7 +131,7 @@ $body-bg: $white;
 //|   Link
 //-----------------------------------------------*/
 $link-decoration: none !default;
-$link-hover-decoration: underline !default;
+
 
 //*-----------------------------------------------
 //|   Components
@@ -233,7 +233,7 @@ $blockquote-font-size: $font-size-lg !default;
 // //*-----------------------------------------------
 //|   Tables
 //-----------------------------------------------*/
-$table-border-color: var(--#{$variable-prefix}table-border-color) !default;
+// $table-border-color: var(--#{$variable-prefix}table-border-color) !default;
 $table-head-bg: $gray-200 !default;
 $table-head-color: $dark !default;
 $table-dark-bg: $gray-1000 !default;
@@ -251,8 +251,8 @@ $table-group-separator-color: inherit !default;
 //*-----------------------------------------------
 //|   Buttons
 //-----------------------------------------------*/
-$btn-sparrow-box-shadow: var(--#{$variable-prefix}btn-sparrow-box-shadow) !default;
-$btn-sparrow-hover-box-shadow: var(--#{$variable-prefix}btn-sparrow-hover-box-shadow) !default;
+// $btn-sparrow-box-shadow: var(--#{$variable-prefix}btn-sparrow-box-shadow) !default;
+// $btn-sparrow-hover-box-shadow: var(--#{$variable-prefix}btn-sparrow-hover-box-shadow) !default;
 
 //*-----------------------------------------------
 //|   Buttons and Forms
@@ -266,7 +266,7 @@ $input-btn-padding-x-sm: 1.2rem !default;
 $input-btn-padding-y-lg: 1.2rem !default;
 $input-btn-padding-x-lg: 5rem !default;
 
-$input-placeholder-color: $gray-300 !default;
+$input-placeholder-color: $secondary !default;
 
 $btn-reveal-hover-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1),
   0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba($black, 0.07),
@@ -296,16 +296,16 @@ $zindex-sticky: 1015 !default;
 //*-----------------------------------------------
 //|   Navigation
 //-----------------------------------------------*/
-$navbar-dark-color: var(--#{$variable-prefix}navbar-dark-color) !default;
-$navbar-dark-hover-color: var(--#{$variable-prefix}navbar-dark-hover-color) !default;
-$navbar-dark-active-color: var(--#{$variable-prefix}navbar-dark-active-color) !default;
-$navbar-dark-disabled-color: var(--#{$variable-prefix}navbar-dark-disabled-color) !default;
-$navbar-dark-toggler-border-color: var(--#{$variable-prefix}navbar-dark-toggler-border-color) !default;
-$navbar-light-color: var(--#{$variable-prefix}navbar-light-color) !default;
-$navbar-light-hover-color: var(--#{$variable-prefix}navbar-light-hover-color) !default;
-$navbar-light-active-color: var(--#{$variable-prefix}navbar-light-active-color) !default;
-$navbar-light-disabled-color: var(--#{$variable-prefix}navbar-light-disabled-color) !default;
-$navbar-light-toggler-border-color: var(--#{$variable-prefix}navbar-light-toggler-border-color) !default;
+// $navbar-dark-color: var(--#{$variable-prefix}navbar-dark-color) !default;
+// $navbar-dark-hover-color: var(--#{$variable-prefix}navbar-dark-hover-color) !default;
+// $navbar-dark-active-color: var(--#{$variable-prefix}navbar-dark-active-color) !default;
+// $navbar-dark-disabled-color: var(--#{$variable-prefix}navbar-dark-disabled-color) !default;
+// $navbar-dark-toggler-border-color: var(--#{$variable-prefix}navbar-dark-toggler-border-color) !default;
+// $navbar-light-color: var(--#{$variable-prefix}navbar-light-color) !default;
+// $navbar-light-hover-color: var(--#{$variable-prefix}navbar-light-hover-color) !default;
+// $navbar-light-active-color: var(--#{$variable-prefix}navbar-light-active-color) !default;
+// $navbar-light-disabled-color: var(--#{$variable-prefix}navbar-light-disabled-color) !default;
+// $navbar-light-toggler-border-color: var(--#{$variable-prefix}navbar-light-toggler-border-color) !default;
 
 $navbar-font-size: $font-size-base * 0.8 !default;
 $navbar-padding-y: map_get($spacers, 2) !default;
@@ -329,7 +329,7 @@ $navbar-dark-toggler-icon-bg: str-replace(
 
 // Navbar Glass
 
-$bg-navbar-glass: var(--#{$variable-prefix}bg-navbar-glass) !default;
+// $bg-navbar-glass: var(--#{$variable-prefix}bg-navbar-glass) !default;
 
 // /*-----------------------------------------------
 //|   Navbar Brand
@@ -340,17 +340,17 @@ $navbar-brand-font-weight: $font-weight-bold !default;
 //*-----------------------------------------------
 //|   Dropdowns | Dropdown menu container and contents.
 //-----------------------------------------------*/
-$dropdown-bg: var(--#{$variable-prefix}dropdown-bg) !default;
-$dropdown-color: var(--#{$variable-prefix}dropdown-color) !default;
-$dropdown-link-color: var(--#{$variable-prefix}dropdown-link-color) !default;
-$dropdown-link-hover-color: var(--#{$variable-prefix}dropdown-link-hover-color) !default;
-$dropdown-link-hover-bg: var(--#{$variable-prefix}dropdown-link-hover-bg) !default;
-$dropdown-link-disabled-color: var(--#{$variable-prefix}dropdown-link-disabled-color) !default;
-$dropdown-divider-bg: var(--#{$variable-prefix}dropdown-border-color) !default;
-$dropdown-border-color: var(--#{$variable-prefix}dropdown-border-color) !default;
-$dropdown-link-active-color: var(--#{$variable-prefix}dropdown-link-active-color) !default;
-$dropdown-link-active-bg: var(--#{$variable-prefix}dropdown-link-active-bg) !default;
-$dropdown-box-shadow: var(--#{$variable-prefix}dropdown-box-shadow) !default;
+// $dropdown-bg: var(--#{$variable-prefix}dropdown-bg) !default;
+// $dropdown-color: var(--#{$variable-prefix}dropdown-color) !default;
+// $dropdown-link-color: var(--#{$variable-prefix}dropdown-link-color) !default;
+// $dropdown-link-hover-color: var(--#{$variable-prefix}dropdown-link-hover-color) !default;
+// $dropdown-link-hover-bg: var(--#{$variable-prefix}dropdown-link-hover-bg) !default;
+// $dropdown-link-disabled-color: var(--#{$variable-prefix}dropdown-link-disabled-color) !default;
+// $dropdown-divider-bg: var(--#{$variable-prefix}dropdown-border-color) !default;
+// $dropdown-border-color: var(--#{$variable-prefix}dropdown-border-color) !default;
+// $dropdown-link-active-color: var(--#{$variable-prefix}dropdown-link-active-color) !default;
+// $dropdown-link-active-bg: var(--#{$variable-prefix}dropdown-link-active-bg) !default;
+// $dropdown-box-shadow: var(--#{$variable-prefix}dropdown-box-shadow) !default;
 
 $dropdown-font-size: $navbar-font-size !default;
 $dropdown-item-padding-y: map_get($spacers, 1) !default;
@@ -368,36 +368,36 @@ $pagination-padding-x-sm: 0.5rem !default;
 $pagination-padding-y-lg: 0.75rem !default;
 $pagination-padding-x-lg: 1.5rem !default;
 
-$pagination-color: var(--#{$variable-prefix}pagination-color) !default;
-$pagination-bg: var(--#{$variable-prefix}pagination-bg) !default;
-$pagination-border-color: var(--#{$variable-prefix}pagination-border-color) !default;
-$pagination-focus-color: var(--#{$variable-prefix}pagination-focus-color) !default;
-$pagination-focus-bg: var(--#{$variable-prefix}pagination-focus-bg) !default;
-$pagination-focus-box-shadow: var(--#{$variable-prefix}pagination-focus-box-shadow) !default;
-$pagination-hover-color: var(--#{$variable-prefix}pagination-hover-color) !default;
-$pagination-hover-bg: var(--#{$variable-prefix}pagination-hover-bg) !default;
-$pagination-hover-border-color: var(--#{$variable-prefix}pagination-hover-border-color) !default;
-$pagination-active-color: var(--#{$variable-prefix}pagination-active-color) !default;
-$pagination-active-bg: var(--#{$variable-prefix}pagination-active-bg) !default;
-$pagination-active-border-color: var(--#{$variable-prefix}pagination-active-border-color) !default;
-$pagination-disabled-color: var(--#{$variable-prefix}pagination-disabled-color) !default;
-$pagination-disabled-bg: var(--#{$variable-prefix}pagination-disabled-bg) !default;
-$pagination-disabled-border-color: var(--#{$variable-prefix}pagination-disabled-border-color) !default;
+// $pagination-color: var(--#{$variable-prefix}pagination-color) !default;
+// $pagination-bg: var(--#{$variable-prefix}pagination-bg) !default;
+// $pagination-border-color: var(--#{$variable-prefix}pagination-border-color) !default;
+// $pagination-focus-color: var(--#{$variable-prefix}pagination-focus-color) !default;
+// $pagination-focus-bg: var(--#{$variable-prefix}pagination-focus-bg) !default;
+// $pagination-focus-box-shadow: var(--#{$variable-prefix}pagination-focus-box-shadow) !default;
+// $pagination-hover-color: var(--#{$variable-prefix}pagination-hover-color) !default;
+// $pagination-hover-bg: var(--#{$variable-prefix}pagination-hover-bg) !default;
+// $pagination-hover-border-color: var(--#{$variable-prefix}pagination-hover-border-color) !default;
+// $pagination-active-color: var(--#{$variable-prefix}pagination-active-color) !default;
+// $pagination-active-bg: var(--#{$variable-prefix}pagination-active-bg) !default;
+// $pagination-active-border-color: var(--#{$variable-prefix}pagination-active-border-color) !default;
+// $pagination-disabled-color: var(--#{$variable-prefix}pagination-disabled-color) !default;
+// $pagination-disabled-bg: var(--#{$variable-prefix}pagination-disabled-bg) !default;
+// $pagination-disabled-border-color: var(--#{$variable-prefix}pagination-disabled-border-color) !default;
 
-//*-----------------------------------------------
-//|   Cards
-//-----------------------------------------------*/
+// //*-----------------------------------------------
+// //|   Cards
+// //-----------------------------------------------*/
 
-$card-spacer-y: map_get($spacers, 5) !default;
-$card-spacer-x: map_get($spacers, 5) !default;
-$card-title-spacer-y: map_get($spacers, 3) !default;
-$card-border-width: 1px !default;
-$card-border-radius: $border-radius !default;
-$card-border-color: var(--#{$variable-prefix}card-border-color) !default;
-$card-cap-bg: var(--#{$variable-prefix}card-cap-bg) !default;
-$card-cap-padding-y: $spacer !default;
-$card-cap-padding-x: 3rem !default;
-$card-bg: var(--#{$variable-prefix}card-bg);
+// $card-spacer-y: map_get($spacers, 5) !default;
+// $card-spacer-x: map_get($spacers, 5) !default;
+// $card-title-spacer-y: map_get($spacers, 3) !default;
+// $card-border-width: 1px !default;
+// $card-border-radius: $border-radius !default;
+// $card-border-color: var(--#{$variable-prefix}card-border-color) !default;
+// $card-cap-bg: var(--#{$variable-prefix}card-cap-bg) !default;
+// $card-cap-padding-y: $spacer !default;
+// $card-cap-padding-x: 3rem !default;
+// $card-bg: var(--#{$variable-prefix}card-bg);
 
 // /*-----------------------------------------------
 //|   Tooltip
@@ -440,21 +440,21 @@ $modal-fade-in-transform: scale(1) !default;
 $modal-xs: 12.5rem !default;
 
 
-///*-----------------------------------------------
-//|   List Group
-//-----------------------------------------------*/
-$list-group-bg: var(--#{$variable-prefix}list-group-bg) !default;
-$list-group-border-color: var(--#{$variable-prefix}border-color) !default;
-$list-group-action-hover-color: var(--#{$variable-prefix}list-group-action-hover-color) !default;
-$list-group-hover-bg: var(--#{$variable-prefix}list-group-hover-bg) !default;
-$list-group-action-active-bg: var(--#{$variable-prefix}200);
+// ///*-----------------------------------------------
+// //|   List Group
+// //-----------------------------------------------*/
+// $list-group-bg: var(--#{$variable-prefix}list-group-bg) !default;
+// $list-group-border-color: var(--#{$variable-prefix}border-color) !default;
+// $list-group-action-hover-color: var(--#{$variable-prefix}list-group-action-hover-color) !default;
+// $list-group-hover-bg: var(--#{$variable-prefix}list-group-hover-bg) !default;
+// $list-group-action-active-bg: var(--#{$variable-prefix}200);
 
-//*-----------------------------------------------
-//|   Thumbnail
-//-----------------------------------------------*/
-$thumbnail-bg: var(--#{$variable-prefix}thumbnail-bg) !default;
-$thumbnail-border-width: 3px !default;
-$thumbnail-border-color: var(--#{$variable-prefix}thumbnail-bg) !default;
+// //*-----------------------------------------------
+// //|   Thumbnail
+// //-----------------------------------------------*/
+// $thumbnail-bg: var(--#{$variable-prefix}thumbnail-bg) !default;
+// $thumbnail-border-width: 3px !default;
+// $thumbnail-border-color: var(--#{$variable-prefix}thumbnail-bg) !default;
 
 // /*-----------------------------------------------
 //|   Breadcrumbs
@@ -468,21 +468,10 @@ $breadcrumb-divider: quote('/') !default;
 //|   Carousel
 //-----------------------------------------------*/
 $carousel-transition-duration: 0.8s !default;
-$carousel-indicator-width:           40px !default;
-$carousel-indicator-height:          6px !default;
-$carousel-indicator-active-bg:       $secondary !default;
-
-// $carousel-control-opacity: 0.9 !default;
-// $carousel-control-hover-opacity: 0.9 !default;
-// $carousel-control-color:     $danger !default;
-
-// $carousel-indicator-active-bg:       $info !default;
+$carousel-indicator-width:           11px !default;
+$carousel-indicator-height:          11px !default;
 $carousel-indicator-width:           10px !default;
 $carousel-indicator-height:          10px !default;
-// $carousel-indicator-hit-area-height : 0 !default;
-// $carousel-control-bg-color: rgba($secondary, .3) !important;
-
-// $carousel-control-icon-width:        1.8rem !default;
 $carousel-control-prev-icon-bg:      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#003294' class='bi bi-arrow-left-circle-fill' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z'/%3E%3C/svg%3E") !default;
 $carousel-control-next-icon-bg:      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#003294' class='bi bi-arrow-right-circle-fill' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E") !default;
 

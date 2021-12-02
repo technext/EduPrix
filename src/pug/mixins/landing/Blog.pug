@@ -53,17 +53,18 @@ append variables
     ];
 
 mixin Blog(config)
-  .col-md-3.h-100.mb-4
-    .card.border-100.h-100.shadow-sm  
+  .col-sm-6.col-md-4.col-lg-3.mb-4
+    .card.border-100.h-100.shadow 
       .card-body.p-4.h-100
         img.w-100(src=`${CWD}assets/img/gallery/${config.image}`  alt='')
         .d-flex.justify-content-between.mt-3.border-bottom.border-100.py-2
           span.badge.bg-soft-info.rounded-1.text-info.fw-normal.p-2=config.category
           p.mb-0.text-500=config.date
-        h3.fw-normal.lh-sm.mt-3.mb-0=config.title
+        h3.fw-normal.fs-lg-1.fs-xxl-2.lh-sm.mt-3=config.title
+        a.text-secondary.stretched-link(href='#!') Full Article
 
 mixin Blogs
-  +Section
+  +Section.pt-0
     .row
       .col-12
         .mb-6

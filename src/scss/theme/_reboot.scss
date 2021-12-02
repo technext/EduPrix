@@ -3,7 +3,7 @@
 -----------------------------------------------*/
 ::placeholder {
   opacity: 1;
-  color: $gray-100;
+  color: $gray-500;
 }
 
 html {
@@ -52,6 +52,10 @@ label,
 .invalid-feedback {
   font-family: $font-family-sans-serif;
 }
+
+// a{
+//   text-decoration: none !important;
+// }
 
 pre {
   margin: 0;

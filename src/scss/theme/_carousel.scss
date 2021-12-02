@@ -8,7 +8,7 @@
 
 @include media-breakpoint-up(xl) {
   .carousel-icon{
-    left: 126px !important;
+    left: 156px !important;
     right: 0 !important;
   }
 }
@@ -17,8 +17,7 @@
   position: absolute;
   right: 15%;
   left: 5%;
-  padding-top: 1.25rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2.5rem;
   color: #fff;
   text-align: center;
   @include media-breakpoint-up(xxl) {
@@ -27,15 +26,22 @@
 }
 
 .carousel-indicators.custom-indicators{
-  margin-left: 5%;
   margin-bottom: .3rem;
 }
 
 .carousel-indicators {
+  [data-bs-target]{
+    background-color: $secondary !important;
+    opacity: 1;
+    &.active{
+      background-color: $primary !important;
+    }
+  }
   margin:  0;
   .active {
     opacity: $carousel-indicator-active-opacity;
     border-radius: 0;
+    width: 64px;
   }
 }
 
@@ -63,6 +69,7 @@
 
 
 
+
 .hero-carousel-container{
   padding: 0;
   @include media-breakpoint-up(xl) {
@@ -85,3 +92,6 @@
   right: 0;
   top: -44px;
 }
+
+
+// bootstarp 

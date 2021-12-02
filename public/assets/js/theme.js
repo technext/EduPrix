@@ -569,13 +569,13 @@ var swiperInit = function swiperInit() {
       }
 
       thumbsInit = new window.Swiper(thumbs, thumbsOptions);
-    }
+    } // const swiperNav = swiper.querySelector('.swiper-nav');
 
-    var swiperNav = swiper.querySelector('.swiper-nav');
+
     return new window.Swiper(swiper, _objectSpread(_objectSpread({}, options), {}, {
       navigation: {
-        nextEl: swiperNav === null || swiperNav === void 0 ? void 0 : swiperNav.querySelector('.swiper-button-next'),
-        prevEl: swiperNav === null || swiperNav === void 0 ? void 0 : swiperNav.querySelector('.swiper-button-prev')
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       },
       thumbs: {
         swiper: thumbsInit
