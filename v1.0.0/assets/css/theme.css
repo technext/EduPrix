@@ -803,6 +803,7 @@ a {
 }
 a:hover {
   color: #008ecc;
+  text-decoration: underline;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3411,23 +3412,23 @@ progress {
   height: 1.45em;
 }
 .form-control::-webkit-input-placeholder {
-  color: #003294;
+  color: #7B7A8B;
   opacity: 1;
 }
 .form-control::-moz-placeholder {
-  color: #003294;
+  color: #7B7A8B;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
-  color: #003294;
+  color: #7B7A8B;
   opacity: 1;
 }
 .form-control::-ms-input-placeholder {
-  color: #003294;
+  color: #7B7A8B;
   opacity: 1;
 }
 .form-control::placeholder {
-  color: #003294;
+  color: #7B7A8B;
   opacity: 1;
 }
 .form-control:disabled, .form-control[readonly] {
@@ -4252,6 +4253,7 @@ textarea.form-control-lg {
 }
 .btn:hover {
   color: #5C5B6C;
+  text-decoration: none;
 }
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
@@ -4768,6 +4770,10 @@ textarea.form-control-lg {
 }
 .btn-link:hover {
   color: #008ecc;
+  text-decoration: underline;
+}
+.btn-link:focus {
+  text-decoration: underline;
 }
 .btn-link:disabled, .btn-link.disabled {
   color: #7B7A8B;
@@ -5080,6 +5086,7 @@ textarea.form-control-lg {
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: #2a293b;
+  text-decoration: none;
   background-color: #DBDBE9;
 }
 .dropdown-item.active, .dropdown-item:active {
@@ -5290,6 +5297,7 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: #008ecc;
+  text-decoration: none;
 }
 .nav-link.disabled {
   color: #7B7A8B;
@@ -5413,6 +5421,10 @@ textarea.form-control-lg {
   font-size: 1.25rem;
   white-space: nowrap;
 }
+.navbar-brand:hover, .navbar-brand:focus {
+  text-decoration: none;
+}
+
 .navbar-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6054,6 +6066,9 @@ textarea.form-control-lg {
   margin-bottom: 0;
 }
 
+.card-link:hover {
+  text-decoration: none;
+}
 .card-link + .card-link {
   margin-left: 1rem;
 }
@@ -6351,6 +6366,7 @@ textarea.form-control-lg {
 .page-link:hover {
   z-index: 2;
   color: #008ecc;
+  text-decoration: none;
   background-color: #DBDBE9;
   border-color: #C5C5D2;
 }
@@ -20986,6 +21002,14 @@ ul {
   color: #003294;
 }
 
+.form-eduprixsearch-control {
+  padding: 0.375rem 2.5rem;
+  border: #00B2FF;
+}
+.form-eduprixsearch-control:active, .form-eduprixsearch-control:focus {
+  color: #C5C5D2;
+}
+
 .popover {
   position: absolute;
   top: 0;
@@ -21289,5 +21313,106 @@ ul {
   position: absolute;
   right: 0;
   top: -44px;
+}
+
+.swiper-container {
+  margin-top: 2em;
+  /* minor cosmetic */
+}
+
+.swiper-wrapper {
+  /* now pagination is below slides */
+  margin-bottom: 3em;
+  /* just enough width so slides handing off screen are partially visible */
+  width: 73.8%;
+}
+
+@media (min-width: 37.5em) {
+  .swiper-wrapper {
+    width: 100%;
+  }
+}
+/* doubleing up specificity to win over on transform */
+.swiper-slide.swiper-slide {
+  /* a single column layout */
+  width: 100%;
+}
+
+@media (min-width: 37.5em) {
+  .swiper-slide.swiper-slide {
+    /* going for a 2 column layout here */
+    width: 50%;
+    /* centeredSlides set to true */
+    /* reposition so first slide appears on left */
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+@media (min-width: 43.75em) {
+  .swiper-slide.swiper-slide {
+    /* upping it to a 3 column layout */
+    width: 33.3333333333%;
+    /* centeredSlides set to true */
+    /* reposition so first slide appears on left */
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@media (min-width: 53em) {
+  .swiper-slide.swiper-slide {
+    /* and finally the 4 column layout */
+    width: 25%;
+    /* centeredSlides set to true */
+    /* reposition so first slide appears on left */
+    -webkit-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+}
+.swiper-pagination {
+  /* show on small viewports */
+  display: block;
+}
+
+@media (min-width: 37.5em) {
+  .swiper-pagination {
+    /* hide on larger viewports per stakeholder recommendation */
+    display: none;
+  }
+}
+/* now move prev button more to the left */
+.swiper-button-prev {
+  /* but first hide on small viewports */
+  display: none;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  /* subtract .swiper-wrapper bottom-margin to vertically center arrow */
+  height: calc(100% - 3em);
+}
+
+@media (min-width: 37.5em) {
+  .swiper-button-prev {
+    /* show on larger viewports */
+    display: block;
+  }
+}
+.swiper-button-next {
+  /* hide on small viewports */
+  display: none;
+  right: 0;
+  top: 0;
+  margin-top: 0;
+  /* subtract .swiper-wrapper bottom-margin to vertically center arrow */
+  height: calc(100% - 3em);
+}
+
+@media (min-width: 37.5em) {
+  .swiper-button-next {
+    /* show on larger viewports */
+    display: block;
+  }
 }
 /*# sourceMappingURL=theme.css.map */
