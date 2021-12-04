@@ -25,3 +25,10 @@
       }
     }
   }
+
+.list-social-icon{
+  &:hover{
+    background: $light;
+    border-radius: 7px;
+  }
+} 

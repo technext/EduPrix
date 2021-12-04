@@ -56,55 +56,5 @@
   
 }
 
-.header-title-explore{
-  color: #00B2FF;
-  -webkit-text-fill-color: #003294; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #00B2FF;
-}
 
-@supports (-webkit-text-stroke: 1px #00B2FF) {
-  .header-title-explore{
-    -webkit-text-stroke: 1px #00B2FF;
-    -webkit-text-fill-color: #003294;
-  }
-}
-
-
-.card-hover{
-  transform: translateY(0) translateZ(0);
-  transition: all 0.3s ease-out;
-  background-color:#2257BF;
-  border:0;
-  .icon-box{
-    .eduprix-icon-hover{
-      display:none;
-    }
-    
-    .eduprix-icon{
-      display: block;
-      margin-left:auto;
-      margin-right:auto;
-    }
-  }
-
-  &:hover,
-  &:focus {
-    background-color: $primary;
-    .explore-link{
-      color: $secondary;
-      text-decoration: none;
-    }
-    .eduprix-icon{
-      display: none;
-    }
-    .eduprix-icon-hover{
-      display:block;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    
-  }
-
-}
 

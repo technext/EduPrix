@@ -20009,20 +20009,35 @@ ul {
   color: var(--EduPrix-alert-dark-link-color);
 }
 
-.header-title-explore {
-  color: #00B2FF;
-  -webkit-text-fill-color: #003294;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #00B2FF;
+/* -------------------------------------------------------------------------- */
+/*                                    Badge                                   */
+/* -------------------------------------------------------------------------- */
+.badge-rotate {
+  z-index: 1;
+  -webkit-transform: rotate(-45deg) translate(-30%, -50%);
+  -ms-transform: rotate(-45deg) translate(-30%, -50%);
+  transform: rotate(-45deg) translate(-30%, -50%);
+  position: absolute;
+  padding: 0.25rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  left: -0.4rem;
+  top: 2rem;
 }
 
-@supports (-webkit-text-stroke: 1px #00B2FF) {
-  .header-title-explore {
-    -webkit-text-stroke: 1px #00B2FF;
-    -webkit-text-fill-color: #003294;
-  }
+/*-----------------------------------------------
+|   Card
+-----------------------------------------------*/
+.card {
+  border-radius: 0;
+  border: 0;
 }
+
+.card-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 .card-hover {
   -webkit-transform: translateY(0) translateZ(0);
   transform: translateY(0) translateZ(0);
@@ -20054,35 +20069,6 @@ ul {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                    Badge                                   */
-/* -------------------------------------------------------------------------- */
-.badge-rotate {
-  z-index: 1;
-  -webkit-transform: rotate(-45deg) translate(-30%, -50%);
-  -ms-transform: rotate(-45deg) translate(-30%, -50%);
-  transform: rotate(-45deg) translate(-30%, -50%);
-  position: absolute;
-  padding: 0.25rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  left: -0.4rem;
-  top: 2rem;
-}
-
-/*-----------------------------------------------
-|   Card
------------------------------------------------*/
-.card {
-  border-radius: 0;
-  border: 0;
-}
-
-.card-link {
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -21168,6 +21154,20 @@ ul {
   overflow-y: hidden;
 }
 
+.header-title-explore {
+  color: #00B2FF;
+  -webkit-text-fill-color: #003294;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #00B2FF;
+}
+
+@supports (-webkit-text-stroke: 1px #00B2FF) {
+  .header-title-explore {
+    -webkit-text-stroke: 1px #00B2FF;
+    -webkit-text-fill-color: #003294;
+  }
+}
 .icon-wrapper {
   position: relative;
   display: inline-block;
@@ -21217,6 +21217,11 @@ ul {
   color: #11111D;
 }
 
+.list-social-icon:hover {
+  background: #EBEBF5;
+  border-radius: 7px;
+}
+
 @media (min-width: 1420px) {
   .carousel-icon {
     left: 166px !important;
@@ -21233,7 +21238,7 @@ ul {
   position: absolute;
   right: 15%;
   left: 5%;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.6rem;
   color: #fff;
   text-align: center;
 }
@@ -21317,13 +21322,10 @@ ul {
 
 .swiper-container {
   margin-top: 2em;
-  /* minor cosmetic */
 }
 
 .swiper-wrapper {
-  /* now pagination is below slides */
   margin-bottom: 3em;
-  /* just enough width so slides handing off screen are partially visible */
   width: 73.8%;
 }
 
@@ -21332,18 +21334,13 @@ ul {
     width: 100%;
   }
 }
-/* doubleing up specificity to win over on transform */
 .swiper-slide.swiper-slide {
-  /* a single column layout */
   width: 100%;
 }
 
 @media (min-width: 37.5em) {
   .swiper-slide.swiper-slide {
-    /* going for a 2 column layout here */
     width: 50%;
-    /* centeredSlides set to true */
-    /* reposition so first slide appears on left */
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -21351,10 +21348,7 @@ ul {
 }
 @media (min-width: 43.75em) {
   .swiper-slide.swiper-slide {
-    /* upping it to a 3 column layout */
     width: 33.3333333333%;
-    /* centeredSlides set to true */
-    /* reposition so first slide appears on left */
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
@@ -21362,56 +21356,44 @@ ul {
 }
 @media (min-width: 53em) {
   .swiper-slide.swiper-slide {
-    /* and finally the 4 column layout */
     width: 25%;
-    /* centeredSlides set to true */
-    /* reposition so first slide appears on left */
     -webkit-transform: translateX(-150%);
     -ms-transform: translateX(-150%);
     transform: translateX(-150%);
   }
 }
 .swiper-pagination {
-  /* show on small viewports */
   display: block;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 37.5rem) {
   .swiper-pagination {
-    /* hide on larger viewports per stakeholder recommendation */
     display: none;
   }
 }
-/* now move prev button more to the left */
 .swiper-button-prev {
-  /* but first hide on small viewports */
   display: none;
   left: 0;
   top: 0;
   margin-top: 0;
-  /* subtract .swiper-wrapper bottom-margin to vertically center arrow */
-  height: calc(100% - 3em);
+  height: calc(100% - 3rem);
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 37.5rem) {
   .swiper-button-prev {
-    /* show on larger viewports */
     display: block;
   }
 }
 .swiper-button-next {
-  /* hide on small viewports */
   display: none;
   right: 0;
   top: 0;
   margin-top: 0;
-  /* subtract .swiper-wrapper bottom-margin to vertically center arrow */
-  height: calc(100% - 3em);
+  height: calc(100% - 3rem);
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 37.5rem) {
   .swiper-button-next {
-    /* show on larger viewports */
     display: block;
   }
 }
